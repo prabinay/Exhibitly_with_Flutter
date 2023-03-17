@@ -1,6 +1,6 @@
-# Exhibitly: Online Marketplace for 
+# Exhibitly
 
-> An optimized application for buying and selling arts online. <br />
+> An optimized e-commerce application built with flutter. It allows users to buy and sell arts online. The app utilizes custom API request handling and authorization to ensure secure transactions and data protection.<br />
 
 
 ## Setup
@@ -12,4 +12,4 @@ Run the following commands from your terminal:
 2) `flutter pub get` in the project root directory to install all the required dependencies..
 
 
-##Screenshots
+## Screenshots
