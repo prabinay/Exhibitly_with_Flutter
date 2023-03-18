@@ -1,16 +1,15 @@
-# exhibitly_with_flutter
+# Exhibitly
 
-A new Flutter project.
+> An optimized e-commerce application built with flutter. It allows users to buy and sell arts online. The app utilizes custom API request handling and authorization to ensure secure transactions and data protection.<br />
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+## Setup
 
-A few resources to get you started if this is your first Flutter project:
+Run the following commands from your terminal:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+1) `git clone https://github.com/prabinay/Exhibitly_with_Flutter.git` to clone this repository 
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+2) `flutter pub get` in the project root directory to install all the required dependencies..
+
+
+## Screenshots
