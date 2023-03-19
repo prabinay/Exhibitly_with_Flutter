@@ -71,8 +71,8 @@ class AppStrings {
   static const String yesterday = "Yesterday";
 
   // Add a blog
-  static const String postBlog = "Post a blog";
-  static const String publish = "Publish";
+  static const String postArt = "Add your art";
+  static const String upload = "Upload";
   static const String title = "Add a Title";
-  static const String content = "Tell your Story...";
+  static const String descArt = "Describe your art..";
 }
