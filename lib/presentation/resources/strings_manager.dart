@@ -1,6 +1,6 @@
 class AppStrings {
   // App title
-  static const String appTitle = "Blog";
+  static const String appTitle = "Exhibitly";
   static const String emptyString = "";
 
   // route
@@ -8,7 +8,7 @@ class AppStrings {
 
   //intro screen Text
   static const String continueText = "Continue";
-  static const String introScreenText1 = "Welcome to BlogBuddies, Let’s write!";
+  static const String introScreenText1 = "Welcome to Exhibitly, Buy arts for Life!";
 
   // sign in and login
   static const String signIn = "Sign In";
