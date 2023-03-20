@@ -1,6 +1,7 @@
 
 
 import 'package:exhibitly_with_flutter/presentation/intro_screens/onboard_screen.dart';
+import 'package:exhibitly_with_flutter/presentation/login/login.dart';
 import 'package:exhibitly_with_flutter/presentation/resources/strings_manager.dart';
 import 'package:flutter/material.dart';
 
@@ -8,7 +9,7 @@ import 'package:flutter/material.dart';
 
 class Routes {
   static const String initialScreenRoute = "/";
-  static const String signIn = "/signIn";
+  static const String logIn = "/signIn";
   static const String signUp = "/signUp";
   static const String completeProfileScreen = "/completeProfileScreen";
   static const String loginSuccessScreen = "/loginSuccessScreen";
@@ -28,8 +29,8 @@ class RouteGenerator {
     switch (routeSettings.name) {
       case Routes.initialScreenRoute:
         return MaterialPageRoute(builder: (_) => const OnBoardingScreen());
-      // case Routes.signUp:
-      //   return MaterialPageRoute(builder: (_) => const SignUpPage());
+      case Routes.logIn:
+        return MaterialPageRoute(builder: (_) => const LoginPage());
       // case Routes.homePage:
       //   return MaterialPageRoute(builder: (_) => FeedUI());
       // case Routes.mainPage:

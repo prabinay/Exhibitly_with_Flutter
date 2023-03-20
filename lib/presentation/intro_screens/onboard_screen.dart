@@ -1,6 +1,7 @@
 import 'package:exhibitly_with_flutter/presentation/intro_screens/intro1.dart';
 import 'package:exhibitly_with_flutter/presentation/intro_screens/intro2.dart';
 import 'package:exhibitly_with_flutter/presentation/intro_screens/intro3.dart';
+import 'package:exhibitly_with_flutter/presentation/resources/routes_manager.dart';
 import 'package:flutter/material.dart';
 
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -57,8 +58,11 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 // next or Done
                 onLastPage
                     ? GestureDetector(
-                        onTap: () {
-                          _}));
+                        onTap: (){
+                          Navigator.pushNamed(context, Routes.logIn);
+                        },
+                        child: Text('Done'),
+                    )
                     : GestureDetector(
                         onTap: () {
                           _controller.nextPage(
