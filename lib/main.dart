@@ -1,3 +1,4 @@
+import 'package:exhibitly_with_flutter/presentation/resources/routes_manager.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,9 +17,9 @@ class MyApp extends StatelessWidget {
       
         primarySwatch: Colors.blue,
       ),
-      // onGenerateRoute: RouteGenerator.getRoute,
+      onGenerateRoute: RouteGenerator.getRoute,
       // navigatorKey: navigatorKey,
-      // initialRoute: Routes.initialScreenRoute,
+      initialRoute: Routes.initialScreenRoute,
     );
   }
 }

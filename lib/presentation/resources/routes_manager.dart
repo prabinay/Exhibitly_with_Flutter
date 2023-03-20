@@ -1,5 +1,6 @@
 
 
+import 'package:exhibitly_with_flutter/presentation/intro_screens/onboard_screen.dart';
 import 'package:exhibitly_with_flutter/presentation/resources/strings_manager.dart';
 import 'package:flutter/material.dart';
 
@@ -26,7 +27,7 @@ class RouteGenerator {
   ) {
     switch (routeSettings.name) {
       case Routes.initialScreenRoute:
-      //   return MaterialPageRoute(builder: (_) => const LoginPage());
+        return MaterialPageRoute(builder: (_) => const OnBoardingScreen());
       // case Routes.signUp:
       //   return MaterialPageRoute(builder: (_) => const SignUpPage());
       // case Routes.homePage:
