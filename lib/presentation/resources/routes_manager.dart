@@ -1,7 +1,7 @@
 
 
 import 'package:exhibitly_with_flutter/presentation/intro_screens/onboard_screen.dart';
-import 'package:exhibitly_with_flutter/presentation/login/login.dart';
+import 'package:exhibitly_with_flutter/presentation/login/login_screen.dart';
 import 'package:exhibitly_with_flutter/presentation/resources/strings_manager.dart';
 import 'package:flutter/material.dart';
 

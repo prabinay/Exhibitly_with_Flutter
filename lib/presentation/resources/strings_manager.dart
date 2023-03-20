@@ -8,7 +8,7 @@ class AppStrings {
 
   //intro screen Text
   static const String continueText = "Continue";
-  static const String introScreenText1 = "Welcome to Exhibitly, Buy arts for Life!";
+  static const String introScreenText1 = "Exhibitly, Buy arts for Life!";
 
   // sign in and login
   static const String signIn = "Sign In";
@@ -22,6 +22,7 @@ class AppStrings {
   static const String email = "Email";
   static const String enterEmail = "Enter your email";
   static const String signUp = "Sign Up";
+    static const String signUpgoogle = "Sign Up with Google";
   static const String noAccount = "Don’t have an account? ";
   static const String agreeWithConditions =
       'By continuing your confirm that you agree \nwith our Term and Condition';
