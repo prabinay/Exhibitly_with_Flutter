@@ -1,3 +1,4 @@
+import 'package:exhibitly_with_flutter/presentation/features/profile/profile_details.dart';
 import 'package:flutter/material.dart';
 
 import '../resources/color_manager.dart';
@@ -10,9 +11,8 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-   int _selectedIndex = 0;
+  int _selectedIndex = 0;
   final List<Widget> _widgetOptions = <Widget>[
- 
     // FeedUI(),
     // const ProfileDetails(),
     // const AddNewBlog(),
@@ -20,6 +20,7 @@ class _MainPageState extends State<MainPage> {
     const SizedBox(),
     const SizedBox(),
     const SizedBox(),
+    const ProfileDetails(),
   ];
 
   void _onItemTapped(int index) {
@@ -30,7 +31,7 @@ class _MainPageState extends State<MainPage> {
 
   @override
   Widget build(BuildContext context) {
-     return Scaffold(
+    return Scaffold(
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
@@ -44,14 +45,14 @@ class _MainPageState extends State<MainPage> {
                 label: "",
                 backgroundColor: Colors.green),
             BottomNavigationBarItem(
-                icon: Icon(   
-                  Icons.person,
+                icon: Icon(
+                  Icons.shopping_cart,
                 ),
                 label: "",
                 backgroundColor: Colors.yellow),
             BottomNavigationBarItem(
               icon: Icon(
-                Icons.add_box_outlined,
+                Icons.search,
               ),
               label: "",
               backgroundColor: Colors.blue,
@@ -63,7 +64,7 @@ class _MainPageState extends State<MainPage> {
             ),
             BottomNavigationBarItem(
               icon: Icon(
-                Icons.notification_important_outlined,
+                Icons.person,
               ),
               label: "",
               backgroundColor: Colors.blue,

@@ -6,6 +6,8 @@ import 'package:exhibitly_with_flutter/presentation/login/register_screen.dart';
 import 'package:exhibitly_with_flutter/presentation/resources/strings_manager.dart';
 import 'package:flutter/material.dart';
 
+import '../home/home_page.dart';
+
 
 
 class Routes {
@@ -34,8 +36,8 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) =>  LoginPage());
       case Routes.signUp:
         return MaterialPageRoute(builder: (_) => SignUpPage());
-      // case Routes.mainPage:
-      //   return MaterialPageRoute(builder: (_) => const MainPage());
+      case Routes.mainPage:
+        return MaterialPageRoute(builder: (_) =>  MainPage());
       // case Routes.detailsPage:
       //   return MaterialPageRoute(builder: (_) => PostDetails());
       // case Routes.signIn:
