@@ -30,7 +30,7 @@ class RouteGenerator {
       case Routes.initialScreenRoute:
         return MaterialPageRoute(builder: (_) => const OnBoardingScreen());
       case Routes.logIn:
-        return MaterialPageRoute(builder: (_) => const LoginPage());
+        return MaterialPageRoute(builder: (_) =>  LoginPage());
       // case Routes.homePage:
       //   return MaterialPageRoute(builder: (_) => FeedUI());
       // case Routes.mainPage:
