@@ -12,5 +12,6 @@ class ImageAssets{
   static const String logoIcon = "$iconPath/logo.png";
 
   static const String profilePic = "$imagePath/deadpool.png";
+  static const String  google = "$imagePath/google.png";
 
 }

@@ -2,6 +2,7 @@
 
 import 'package:exhibitly_with_flutter/presentation/intro_screens/onboard_screen.dart';
 import 'package:exhibitly_with_flutter/presentation/login/login_screen.dart';
+import 'package:exhibitly_with_flutter/presentation/login/register_screen.dart';
 import 'package:exhibitly_with_flutter/presentation/resources/strings_manager.dart';
 import 'package:flutter/material.dart';
 
@@ -31,8 +32,8 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => const OnBoardingScreen());
       case Routes.logIn:
         return MaterialPageRoute(builder: (_) =>  LoginPage());
-      // case Routes.homePage:
-      //   return MaterialPageRoute(builder: (_) => FeedUI());
+      case Routes.signUp:
+        return MaterialPageRoute(builder: (_) => SignUpPage());
       // case Routes.mainPage:
       //   return MaterialPageRoute(builder: (_) => const MainPage());
       // case Routes.detailsPage:

@@ -4,6 +4,8 @@ import 'package:exhibitly_with_flutter/presentation/login/button.dart';
 import 'package:exhibitly_with_flutter/presentation/resources/color_manager.dart';
 import 'package:flutter/material.dart';
 
+import '../resources/routes_manager.dart';
+
 class LoginPage extends StatelessWidget {
   LoginPage({Key? key}) : super(key: key);
 
@@ -125,7 +127,7 @@ class LoginPage extends StatelessWidget {
                     SizedBox(width: 25),
 
                     // apple button
-                    // SquareTile(imagePath: 'lib/images/apple.png')
+                    SquareTile(imagePath: 'assets/images/apple.png')
                   ],
                 ),
 
@@ -140,11 +142,19 @@ class LoginPage extends StatelessWidget {
                       style: TextStyle(color: Colors.grey[700]),
                     ),
                     const SizedBox(width: 4),
-                    const Text(
-                      'Register now',
-                      style: TextStyle(
-                        color: Colors.blue,
-                        fontWeight: FontWeight.bold,
+
+
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(context, Routes.signUp);
+                      },
+
+                      child: const Text(
+                        'Register now',
+                        style: TextStyle(
+                          color: Colors.brown,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                   ],
