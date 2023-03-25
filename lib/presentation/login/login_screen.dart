@@ -13,7 +13,9 @@ class LoginPage extends StatelessWidget {
   final passwordController = TextEditingController();
 
   // signin method
-  void signUserIn(){}
+  void signUserIn() {}
+
+  void googleSignIn() {}
 
   @override
   Widget build(BuildContext context) {
@@ -27,15 +29,15 @@ class LoginPage extends StatelessWidget {
                 // mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const SizedBox(height: 50),
-      
+
                   // logo
                   const Icon(
                     Icons.account_circle,
                     size: 100,
                   ),
-      
+
                   const SizedBox(height: 50),
-      
+
                   // welcome back, you've been missed!
                   Text(
                     'Welcome back you\'ve been missed!',
@@ -44,27 +46,27 @@ class LoginPage extends StatelessWidget {
                       fontSize: 16,
                     ),
                   ),
-      
+
                   const SizedBox(height: 25),
-      
+
                   // username textfield
                   MyTextField(
                     controller: usernameController,
                     hintText: 'Username',
                     obscureText: false,
                   ),
-      
+
                   const SizedBox(height: 10),
-      
+
                   // password textfield
                   MyTextField(
                     controller: passwordController,
                     hintText: 'Password',
                     obscureText: true,
                   ),
-      
+
                   const SizedBox(height: 10),
-      
+
                   // forgot password?
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 25.0),
@@ -78,16 +80,16 @@ class LoginPage extends StatelessWidget {
                       ],
                     ),
                   ),
-      
+
                   const SizedBox(height: 25),
-      
+
                   // sign in button
                   MyButton(
-                  onTap: signUserIn,
+                    onTap: signUserIn,
                   ),
-      
+
                   const SizedBox(height: 50),
-      
+
                   // or continue with
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 25.0),
@@ -115,25 +117,30 @@ class LoginPage extends StatelessWidget {
                       ],
                     ),
                   ),
-      
+
                   const SizedBox(height: 50),
-      
+
                   // google + apple sign in buttons
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
+                    children:  [
                       // google button
-                      SquareTile(imagePath: 'assets/images/google.png'),
-      
+                      GoogleButton(
+                        
+                        onTap: googleSignIn,
+                        
+                      ),
+                      
+
                       SizedBox(width: 25),
-      
+
                       // apple button
                       // SquareTile(imagePath: 'assets/images/apple.png')
                     ],
                   ),
-      
+
                   const SizedBox(height: 50),
-      
+
                   // not a member? register now
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -143,13 +150,10 @@ class LoginPage extends StatelessWidget {
                         style: TextStyle(color: Colors.grey[700]),
                       ),
                       const SizedBox(width: 4),
-      
-      
                       GestureDetector(
                         onTap: () {
                           Navigator.pushNamed(context, Routes.signUp);
                         },
-      
                         child: const Text(
                           'Register now',
                           style: TextStyle(
