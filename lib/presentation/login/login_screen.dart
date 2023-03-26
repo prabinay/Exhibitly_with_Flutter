@@ -126,9 +126,7 @@ class LoginPage extends StatelessWidget {
                     children:  [
                       // google button
                       GoogleButton(
-                        
                         onTap: googleSignIn,
-                        
                       ),
                       
 

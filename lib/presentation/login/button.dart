@@ -47,25 +47,63 @@ class GoogleButton extends StatelessWidget {
       onTap: () {
         Navigator.pushNamed(context, Routes.mainPage);
       },
+
+      // child: Container(
+
+      //   padding: const EdgeInsets.all(25),
+      //   margin: const EdgeInsets.symmetric(horizontal: 25),
+      //   decoration: BoxDecoration(
+      //     color: ColorManager.KPrimaryColor,
+      //     borderRadius: BorderRadius.circular(8),
+      //   ),
+      //   child: const Center(
+      //     child: Text(
+      //       "Sign In with Google",
+      //       style: TextStyle(
+
+      //         color: Colors.white,
+      //         fontWeight: FontWeight.bold,
+      //         fontSize: 16,
+      //       ),
+      //     ),
+      //   ),
+      // ),
+
       child: Container(
-        padding: const EdgeInsets.all(25),
-        margin: const EdgeInsets.symmetric(horizontal: 25),
-        decoration: BoxDecoration(
-          color: ColorManager.KPrimaryColor,
-          borderRadius: BorderRadius.circular(8),
-        ),
-        child: const Center(
-          child: Text(
-            "Sign In with Google",
-            style: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-              fontSize: 16,
-            ),
+          // margin: const EdgeInsets.symmetric(horizontal: 25),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(8),
+          ),
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+        
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.center,
+            // ignore: prefer_const_literals_to_create_immutables
+            children: <Widget>[
+              const Image(
+                image: AssetImage("assets/images/google.png"),
+                height: 35.0,
+              ),
+              // ignore: prefer_const_constructors
+              Padding(
+                padding: const EdgeInsets.only(left: 10),
+                // ignore: prefer_const_constructors
+                child: Text(
+                  'Sign in with Google',
+                  style: const TextStyle(
+                    fontSize: 16,
+                    color: Colors.black54,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              )
+            ],
           ),
         ),
       ),
     );
   }
 }
-
