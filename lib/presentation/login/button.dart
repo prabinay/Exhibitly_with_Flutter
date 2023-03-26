@@ -47,37 +47,16 @@ class GoogleButton extends StatelessWidget {
       onTap: () {
         Navigator.pushNamed(context, Routes.mainPage);
       },
-
-      // child: Container(
-
-      //   padding: const EdgeInsets.all(25),
-      //   margin: const EdgeInsets.symmetric(horizontal: 25),
-      //   decoration: BoxDecoration(
-      //     color: ColorManager.KPrimaryColor,
-      //     borderRadius: BorderRadius.circular(8),
-      //   ),
-      //   child: const Center(
-      //     child: Text(
-      //       "Sign In with Google",
-      //       style: TextStyle(
-
-      //         color: Colors.white,
-      //         fontWeight: FontWeight.bold,
-      //         fontSize: 16,
-      //       ),
-      //     ),
-      //   ),
-      // ),
-
       child: Container(
-          // margin: const EdgeInsets.symmetric(horizontal: 25),
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(8),
-          ),
-        child: Padding(
-          padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
-        
+        margin: const EdgeInsets.symmetric(horizontal: 25),
+        padding: const EdgeInsets.all(22),
+        // height: 75,
+        // width: MediaQuery.of(context).size.width,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(8),
+        ),
+        child: Center(
           child: Row(
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.center,
@@ -85,7 +64,7 @@ class GoogleButton extends StatelessWidget {
             children: <Widget>[
               const Image(
                 image: AssetImage("assets/images/google.png"),
-                height: 35.0,
+                height: 25.0,
               ),
               // ignore: prefer_const_constructors
               Padding(

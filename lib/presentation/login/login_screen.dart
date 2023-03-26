@@ -54,6 +54,7 @@ class LoginPage extends StatelessWidget {
                     controller: usernameController,
                     hintText: 'Username',
                     obscureText: false,
+                    
                   ),
 
                   const SizedBox(height: 10),
