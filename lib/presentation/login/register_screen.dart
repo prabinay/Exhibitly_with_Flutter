@@ -1,15 +1,29 @@
 import 'package:exhibitly_with_flutter/presentation/login/squaretile.dart';
 import 'package:exhibitly_with_flutter/presentation/login/textfield.dart';
 import 'package:flutter/material.dart';
+import 'package:form_field_validator/form_field_validator.dart';
 
 import '../resources/color_manager.dart';
 import '../resources/routes_manager.dart';
 import 'button.dart';
 
-class SignUpPage extends StatelessWidget {
+class SignUpPage extends StatefulWidget {
   SignUpPage({super.key});
+
+  @override
+  State<SignUpPage> createState() => _SignUpPageState();
+}
+
+class _SignUpPageState extends State<SignUpPage> {
   final usernameController = TextEditingController();
+
   final passwordController = TextEditingController();
+
+  bool _isObscure = true;
+
+  bool _isLoading = false;
+
+  GlobalKey<FormState> fromKey = GlobalKey<FormState>();
 
     void signUserIn(){}
 
@@ -46,46 +60,237 @@ class SignUpPage extends StatelessWidget {
                   const SizedBox(height: 25),
       
                   // username textfield
-                  MyTextField(
-                    controller: usernameController,
-                    hintText: 'Full Name',
-                    obscureText: false,
-                  ),
+                  TextFormField(
+                      // controller: _passwordController,
+                      decoration: InputDecoration(
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.grey.shade500),
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                            borderSide: BorderSide(color: ColorManager.kError),
+                          ),
+                          errorBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                            borderSide: BorderSide(color: ColorManager.kError),
+                          ),
+                          focusedErrorBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                            borderSide: BorderSide(color: ColorManager.kError),
+                          ),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                            borderSide: BorderSide(color: ColorManager.kError),
+                          ),
+                          fillColor: Colors.grey.shade200,
+                          filled: true,
+                          labelText: 'Full Name',
+                          labelStyle: TextStyle(color: Colors.grey[500]),
+                          prefixIcon: Icon(
+                            Icons.person_outlined,
+                            color: ColorManager.KPrimaryColor,
+                          ),
+                          ),
+                      validator: MultiValidator([
+                        RequiredValidator(errorText: "* Required"),
+                        
+                      ]),
+                    ),
       
                   const SizedBox(height: 10),
       
-                   MyTextField(
-                    controller: usernameController,
-                    hintText: 'Email',
-                    obscureText: false,
-                  ),
+                  TextFormField(
+                      // controller: _passwordController,
+                      decoration: InputDecoration(
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.grey.shade500),
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                            borderSide: BorderSide(color: ColorManager.kError),
+                          ),
+                          errorBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                            borderSide: BorderSide(color: ColorManager.kError),
+                          ),
+                          focusedErrorBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                            borderSide: BorderSide(color: ColorManager.kError),
+                          ),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                            borderSide: BorderSide(color: ColorManager.kError),
+                          ),
+                          fillColor: Colors.grey.shade200,
+                          filled: true,
+                          labelText: 'Email',
+                          labelStyle: TextStyle(color: Colors.grey[500]),
+                          prefixIcon: Icon(
+                            Icons.email_outlined,
+                            color: ColorManager.KPrimaryColor,
+                          ),
+                          ),
+                      validator: MultiValidator([
+                        RequiredValidator(errorText: "* Required"),
+                          EmailValidator(errorText: "Enter valid email id"),
+                      ]),
+                    ),
       
                   const SizedBox(height: 10),
       
-                   MyTextField(
-                    controller: usernameController,
-                    hintText: 'Phone Number',
-                    obscureText: false,
-                  ),
+                   TextFormField(
+                      // controller: _passwordController,
+                      decoration: InputDecoration(
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.grey.shade500),
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                            borderSide: BorderSide(color: ColorManager.kError),
+                          ),
+                          errorBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                            borderSide: BorderSide(color: ColorManager.kError),
+                          ),
+                          focusedErrorBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                            borderSide: BorderSide(color: ColorManager.kError),
+                          ),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                            borderSide: BorderSide(color: ColorManager.kError),
+                          ),
+                          fillColor: Colors.grey.shade200,
+                          filled: true,
+                          labelText: 'Phone No',
+                          labelStyle: TextStyle(color: Colors.grey[500]),
+                          prefixIcon: Icon(
+                            Icons.phone_android,
+                            color: ColorManager.KPrimaryColor,
+                          ),
+                          ),
+                      validator: MultiValidator([
+                        RequiredValidator(errorText: "* Required"),
+                        
+                      ]),
+                    ),
       
                   const SizedBox(height: 10),
       
                   
       
                   // password textfield
-                  MyTextField(
-                    controller: passwordController,
-                    hintText: 'Password',
-                    obscureText: true,
-                  ),
-      
+                  TextFormField(
+                      // controller: _passwordController,
+                      obscureText: _isObscure,
+                      decoration: InputDecoration(
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.grey.shade500),
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                            borderSide: BorderSide(color: ColorManager.kError),
+                          ),
+                          errorBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                            borderSide: BorderSide(color: ColorManager.kError),
+                          ),
+                          focusedErrorBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                            borderSide: BorderSide(color: ColorManager.kError),
+                          ),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                            borderSide: BorderSide(color: ColorManager.kError),
+                          ),
+                          fillColor: Colors.grey.shade200,
+                          filled: true,
+                          labelText: 'Password',
+                          labelStyle: TextStyle(color: Colors.grey[500]),
+                          prefixIcon: Icon(
+                            Icons.lock,
+                            color: ColorManager.KPrimaryColor,
+                          ),
+                          suffixIcon: IconButton(
+                            icon: Icon(
+                              _isObscure
+                                  ? Icons.visibility
+                                  : Icons.visibility_off,
+                              color: ColorManager.KPrimaryColor,
+                            ),
+                            onPressed: () {
+                              setState(() {
+                                _isObscure = !_isObscure;
+                              });
+                            },
+                          )),
+                      validator: MultiValidator([
+                        RequiredValidator(errorText: "* Required"),
+                        MinLengthValidator(6,
+                            errorText: "Password min 6 char required"),
+                        MaxLengthValidator(15,
+                            errorText: "Password should less less than 15 char")
+                      ]),
+                    ),
                   const SizedBox(height: 10),
       
-                   MyTextField(
-                    controller: usernameController,
-                    hintText: 'Confirm Password',
-                    obscureText: false,
-                  ),
+                  TextFormField(
+                      // controller: _passwordController,
+                      obscureText: _isObscure,
+                      decoration: InputDecoration(
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.grey.shade500),
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                            borderSide: BorderSide(color: ColorManager.kError),
+                          ),
+                          errorBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                            borderSide: BorderSide(color: ColorManager.kError),
+                          ),
+                          focusedErrorBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                            borderSide: BorderSide(color: ColorManager.kError),
+                          ),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                            borderSide: BorderSide(color: ColorManager.kError),
+                          ),
+                          fillColor: Colors.grey.shade200,
+                          filled: true,
+                          labelText: 'Confirm Password',
+                          labelStyle: TextStyle(color: Colors.grey[500]),
+                          prefixIcon: Icon(
+                            Icons.lock,
+                            color: ColorManager.KPrimaryColor,
+                          ),
+                          suffixIcon: IconButton(
+                            icon: Icon(
+                              _isObscure
+                                  ? Icons.visibility
+                                  : Icons.visibility_off,
+                              color: ColorManager.KPrimaryColor,
+                            ),
+                            onPressed: () {
+                              setState(() {
+                                _isObscure = !_isObscure;
+                              });
+                            },
+                          )),
+                      validator: MultiValidator([
+                        RequiredValidator(errorText: "* Required"),
+                        MinLengthValidator(6,
+                            errorText: "Password min 6 char required"),
+                        MaxLengthValidator(15,
+                            errorText: "Password should less less than 15 char")
+                      ]),
+                    ),
       
                   const SizedBox(height: 10),
       

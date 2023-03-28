@@ -4,6 +4,8 @@ class ColorManager {
   static Color KPrimaryColor = HexColor.fromHex("A04732");
   static Color KSecondaryColor = HexColor.fromHex("EDEBE3");
   static Color KTextColor = HexColor.fromHex("#263238");
+  static Color kError = HexColor.fromHex("#dc3545");
+  static Color kSuccess = HexColor.fromHex("#dc3545");
 
 
   
