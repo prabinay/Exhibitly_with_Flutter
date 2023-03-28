@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:exhibitly_with_flutter/presentation/login/button.dart';
 import 'package:exhibitly_with_flutter/presentation/resources/color_manager.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:form_field_validator/form_field_validator.dart';
 import 'package:simple_animations/simple_animations.dart';
@@ -17,9 +18,9 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  // final _usernameController = TextEditingController();
+  final _emailTextController = TextEditingController();
 
-  // final _passwordController = TextEditingController();
+  final _passwordTextController = TextEditingController();
 
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
@@ -69,7 +70,7 @@ class _LoginPageState extends State<LoginPage> {
 
                     // Textfieldfor username
                     TextFormField(
-                        // controller: _usernameController,
+                        controller: _emailTextController,
                         // obscureText: obscureText,
 
                         decoration: InputDecoration(
@@ -99,7 +100,7 @@ class _LoginPageState extends State<LoginPage> {
                             ),
                             fillColor: Colors.grey.shade200,
                             filled: true,
-                            labelText: 'User name',
+                            labelText: 'Email',
                             labelStyle: TextStyle(color: Colors.grey[500]),
                             prefixIcon: Icon(
                               Icons.email,
@@ -113,7 +114,7 @@ class _LoginPageState extends State<LoginPage> {
                     const SizedBox(height: 16),
 
                     TextFormField(
-                      // controller: _passwordController,
+                      controller: _passwordTextController,
                       obscureText: _isObscure,
                       decoration: InputDecoration(
                           enabledBorder: OutlineInputBorder(
@@ -162,8 +163,8 @@ class _LoginPageState extends State<LoginPage> {
                         MinLengthValidator(6,
                             errorText: "Password min 6 char required"),
                         MaxLengthValidator(15,
-                            errorText: "Password should less less than 15 char"),
-                            
+                            errorText:
+                                "Password should less less than 15 char"),
                       ]),
                     ),
 
@@ -199,6 +200,17 @@ class _LoginPageState extends State<LoginPage> {
                       child: GestureDetector(
                         child: TextButton(
                           onPressed: () {
+                            FirebaseAuth.instance
+                                .signInWithEmailAndPassword(
+                                    email: _emailTextController.text,
+                                    password: _passwordTextController.text)
+                                .then((value) {
+                              print("Logged In");
+                              Navigator.pushNamed(context, Routes.mainPage);
+                            }).onError((error, stackTrace) {
+                              print("Error ${error.toString()}");
+                            });
+
                             if (formKey.currentState!.validate()) {
                               log('fdjgf');
                               //here call your function

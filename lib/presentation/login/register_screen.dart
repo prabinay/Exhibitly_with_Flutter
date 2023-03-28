@@ -1,5 +1,6 @@
 import 'package:exhibitly_with_flutter/presentation/login/squaretile.dart';
 import 'package:exhibitly_with_flutter/presentation/login/textfield.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:form_field_validator/form_field_validator.dart';
 
@@ -19,6 +20,9 @@ class _SignUpPageState extends State<SignUpPage> {
   // final usernameController = TextEditingController();
 
   // final passwordController = TextEditingController();
+  final _emailTextController = TextEditingController();
+
+  final _passwordTextController = TextEditingController();
 
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
@@ -106,7 +110,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     const SizedBox(height: 10),
 
                     TextFormField(
-                      // controller: _passwordController,
+                      controller: _emailTextController,
                       decoration: InputDecoration(
                         enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(color: Colors.grey.shade500),
@@ -143,50 +147,50 @@ class _SignUpPageState extends State<SignUpPage> {
                       ]),
                     ),
 
-                    const SizedBox(height: 10),
+                    // const SizedBox(height: 10),
 
-                    TextFormField(
-                      // controller: _passwordController,
-                      decoration: InputDecoration(
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.grey.shade500),
-                          borderRadius: BorderRadius.circular(10.0),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10.0),
-                          borderSide: BorderSide(color: ColorManager.kError),
-                        ),
-                        errorBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10.0),
-                          borderSide: BorderSide(color: ColorManager.kError),
-                        ),
-                        focusedErrorBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10.0),
-                          borderSide: BorderSide(color: ColorManager.kError),
-                        ),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10.0),
-                          borderSide: BorderSide(color: ColorManager.kError),
-                        ),
-                        fillColor: Colors.grey.shade200,
-                        filled: true,
-                        labelText: 'Phone No',
-                        labelStyle: TextStyle(color: Colors.grey[500]),
-                        prefixIcon: Icon(
-                          Icons.phone_android,
-                          color: ColorManager.KPrimaryColor,
-                        ),
-                      ),
-                      validator: MultiValidator([
-                        RequiredValidator(errorText: "* Required"),
-                      ]),
-                    ),
+                    // TextFormField(
+                    //   // controller: _passwordController,
+                    //   decoration: InputDecoration(
+                    //     enabledBorder: OutlineInputBorder(
+                    //       borderSide: BorderSide(color: Colors.grey.shade500),
+                    //       borderRadius: BorderRadius.circular(10.0),
+                    //     ),
+                    //     focusedBorder: OutlineInputBorder(
+                    //       borderRadius: BorderRadius.circular(10.0),
+                    //       borderSide: BorderSide(color: ColorManager.kError),
+                    //     ),
+                    //     errorBorder: OutlineInputBorder(
+                    //       borderRadius: BorderRadius.circular(10.0),
+                    //       borderSide: BorderSide(color: ColorManager.kError),
+                    //     ),
+                    //     focusedErrorBorder: OutlineInputBorder(
+                    //       borderRadius: BorderRadius.circular(10.0),
+                    //       borderSide: BorderSide(color: ColorManager.kError),
+                    //     ),
+                    //     border: OutlineInputBorder(
+                    //       borderRadius: BorderRadius.circular(10.0),
+                    //       borderSide: BorderSide(color: ColorManager.kError),
+                    //     ),
+                    //     fillColor: Colors.grey.shade200,
+                    //     filled: true,
+                    //     labelText: 'Phone No',
+                    //     labelStyle: TextStyle(color: Colors.grey[500]),
+                    //     prefixIcon: Icon(
+                    //       Icons.phone_android,
+                    //       color: ColorManager.KPrimaryColor,
+                    //     ),
+                    //   ),
+                    //   validator: MultiValidator([
+                    //     RequiredValidator(errorText: "* Required"),
+                    //   ]),
+                    // ),
 
                     const SizedBox(height: 10),
 
                     // password textfield
                     TextFormField(
-                      // controller: _passwordController,
+                      controller: _passwordTextController,
                       obscureText: _isObscure,
                       decoration: InputDecoration(
                           enabledBorder: OutlineInputBorder(
@@ -244,65 +248,65 @@ class _SignUpPageState extends State<SignUpPage> {
                     ),
                     const SizedBox(height: 10),
 
-                    TextFormField(
-                      // controller: _passwordController,
-                      obscureText: _isObscure,
-                      decoration: InputDecoration(
-                          enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.grey.shade500),
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10.0),
-                            borderSide: BorderSide(color: ColorManager.kError),
-                          ),
-                          errorBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10.0),
-                            borderSide: BorderSide(color: ColorManager.kError),
-                          ),
-                          focusedErrorBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10.0),
-                            borderSide: BorderSide(color: ColorManager.kError),
-                          ),
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10.0),
-                            borderSide: BorderSide(color: ColorManager.kError),
-                          ),
-                          fillColor: Colors.grey.shade200,
-                          filled: true,
-                          labelText: 'Confirm Password',
-                          labelStyle: TextStyle(color: Colors.grey[500]),
-                          prefixIcon: Icon(
-                            Icons.lock,
-                            color: ColorManager.KPrimaryColor,
-                          ),
-                          suffixIcon: IconButton(
-                            icon: Icon(
-                              _isObscure
-                                  ? Icons.visibility
-                                  : Icons.visibility_off,
-                              color: ColorManager.KPrimaryColor,
-                            ),
-                            onPressed: () {
-                              setState(() {
-                                _isObscure = !_isObscure;
-                              });
-                            },
-                          )),
-                      validator: MultiValidator([
-                        RequiredValidator(errorText: "* Required"),
-                        MinLengthValidator(6,
-                            errorText: "Password min 6 char required"),
-                        MaxLengthValidator(15,
-                            errorText:
-                                "Password should less less than 15 char"),
-                        PatternValidator(r'(?=.*?[#?!@$%^&*-])',
-                            errorText:
-                                'passwords must have at least one special character')
-                      ]),
-                    ),
+                    // TextFormField(
+                    //   // controller: _passwordController,
+                    //   obscureText: _isObscure,
+                    //   decoration: InputDecoration(
+                    //       enabledBorder: OutlineInputBorder(
+                    //         borderSide: BorderSide(color: Colors.grey.shade500),
+                    //         borderRadius: BorderRadius.circular(10.0),
+                    //       ),
+                    //       focusedBorder: OutlineInputBorder(
+                    //         borderRadius: BorderRadius.circular(10.0),
+                    //         borderSide: BorderSide(color: ColorManager.kError),
+                    //       ),
+                    //       errorBorder: OutlineInputBorder(
+                    //         borderRadius: BorderRadius.circular(10.0),
+                    //         borderSide: BorderSide(color: ColorManager.kError),
+                    //       ),
+                    //       focusedErrorBorder: OutlineInputBorder(
+                    //         borderRadius: BorderRadius.circular(10.0),
+                    //         borderSide: BorderSide(color: ColorManager.kError),
+                    //       ),
+                    //       border: OutlineInputBorder(
+                    //         borderRadius: BorderRadius.circular(10.0),
+                    //         borderSide: BorderSide(color: ColorManager.kError),
+                    //       ),
+                    //       fillColor: Colors.grey.shade200,
+                    //       filled: true,
+                    //       labelText: 'Confirm Password',
+                    //       labelStyle: TextStyle(color: Colors.grey[500]),
+                    //       prefixIcon: Icon(
+                    //         Icons.lock,
+                    //         color: ColorManager.KPrimaryColor,
+                    //       ),
+                    //       suffixIcon: IconButton(
+                    //         icon: Icon(
+                    //           _isObscure
+                    //               ? Icons.visibility
+                    //               : Icons.visibility_off,
+                    //           color: ColorManager.KPrimaryColor,
+                    //         ),
+                    //         onPressed: () {
+                    //           setState(() {
+                    //             _isObscure = !_isObscure;
+                    //           });
+                    //         },
+                    //       )),
+                    //   validator: MultiValidator([
+                    //     RequiredValidator(errorText: "* Required"),
+                    //     MinLengthValidator(6,
+                    //         errorText: "Password min 6 char required"),
+                    //     MaxLengthValidator(15,
+                    //         errorText:
+                    //             "Password should less less than 15 char"),
+                    //     PatternValidator(r'(?=.*?[#?!@$%^&*-])',
+                    //         errorText:
+                    //             'passwords must have at least one special character')
+                    //   ]),
+                    // ),
 
-                    const SizedBox(height: 10),
+                    // const SizedBox(height: 10),
 
                     // sign in button
                     Container(
@@ -326,6 +330,19 @@ class _SignUpPageState extends State<SignUpPage> {
                             } else {
                               print("not valid");
                             }
+
+                            FirebaseAuth.instance
+                                .createUserWithEmailAndPassword(
+                                    email: _emailTextController.text,
+                                    password: _passwordTextController.text)
+                                    .then((value){
+                                      print("New Account created");
+                                      Navigator.pushNamed(context,Routes.mainPage);
+                                    }
+
+                                    ).onError((error, stackTrace) {
+                                      print("Error is ${error.toString()}");
+                                    });
                           },
                           // ignore: prefer_const_constructors
                           child: Text(
