@@ -20,7 +20,6 @@ class _SignUpPageState extends State<SignUpPage> {
 
   // final passwordController = TextEditingController();
 
-  
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
   bool _isObscure = true;
@@ -29,7 +28,7 @@ class _SignUpPageState extends State<SignUpPage> {
 
   GlobalKey<FormState> fromKey = GlobalKey<FormState>();
 
-    void signUserIn(){}
+  void signUserIn() {}
 
   @override
   Widget build(BuildContext context) {
@@ -46,15 +45,15 @@ class _SignUpPageState extends State<SignUpPage> {
                   // mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     const SizedBox(height: 50),
-      
+
                     // logo
                     const Icon(
                       Icons.person_add,
                       size: 100,
                     ),
-      
+
                     const SizedBox(height: 50),
-      
+
                     // welcome back, you've been missed!
                     Text(
                       'Creeate a new Account',
@@ -63,246 +62,248 @@ class _SignUpPageState extends State<SignUpPage> {
                         fontSize: 16,
                       ),
                     ),
-      
+
                     const SizedBox(height: 25),
-      
+
                     // username textfield
                     TextFormField(
-                        // controller: _passwordController,
-                        decoration: InputDecoration(
-                            enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Colors.grey.shade500),
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                            focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10.0),
-                              borderSide: BorderSide(color: ColorManager.kError),
-                            ),
-                            errorBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10.0),
-                              borderSide: BorderSide(color: ColorManager.kError),
-                            ),
-                            focusedErrorBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10.0),
-                              borderSide: BorderSide(color: ColorManager.kError),
-                            ),
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10.0),
-                              borderSide: BorderSide(color: ColorManager.kError),
-                            ),
-                            fillColor: Colors.grey.shade200,
-                            filled: true,
-                            labelText: 'Full Name',
-                            labelStyle: TextStyle(color: Colors.grey[500]),
-                            prefixIcon: Icon(
-                              Icons.person_outlined,
-                              color: ColorManager.KPrimaryColor,
-                            ),
-                            ),
-                        validator: MultiValidator([
-                          RequiredValidator(errorText: "* Required"),
-                          
-                        ]),
+                      // controller: _passwordController,
+                      decoration: InputDecoration(
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.grey.shade500),
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                          borderSide: BorderSide(color: ColorManager.kError),
+                        ),
+                        errorBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                          borderSide: BorderSide(color: ColorManager.kError),
+                        ),
+                        focusedErrorBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                          borderSide: BorderSide(color: ColorManager.kError),
+                        ),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                          borderSide: BorderSide(color: ColorManager.kError),
+                        ),
+                        fillColor: Colors.grey.shade200,
+                        filled: true,
+                        labelText: 'Full Name',
+                        labelStyle: TextStyle(color: Colors.grey[500]),
+                        prefixIcon: Icon(
+                          Icons.person_outlined,
+                          color: ColorManager.KPrimaryColor,
+                        ),
                       ),
-      
+                      validator: MultiValidator([
+                        RequiredValidator(errorText: "* Required"),
+                      ]),
+                    ),
+
                     const SizedBox(height: 10),
-      
+
                     TextFormField(
-                        // controller: _passwordController,
-                        decoration: InputDecoration(
-                            enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Colors.grey.shade500),
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                            focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10.0),
-                              borderSide: BorderSide(color: ColorManager.kError),
-                            ),
-                            errorBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10.0),
-                              borderSide: BorderSide(color: ColorManager.kError),
-                            ),
-                            focusedErrorBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10.0),
-                              borderSide: BorderSide(color: ColorManager.kError),
-                            ),
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10.0),
-                              borderSide: BorderSide(color: ColorManager.kError),
-                            ),
-                            fillColor: Colors.grey.shade200,
-                            filled: true,
-                            labelText: 'Email',
-                            labelStyle: TextStyle(color: Colors.grey[500]),
-                            prefixIcon: Icon(
-                              Icons.email_outlined,
-                              color: ColorManager.KPrimaryColor,
-                            ),
-                            ),
-                        validator: MultiValidator([
-                          RequiredValidator(errorText: "* Required"),
-                            EmailValidator(errorText: "Enter valid email id"),
-                        ]),
+                      // controller: _passwordController,
+                      decoration: InputDecoration(
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.grey.shade500),
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                          borderSide: BorderSide(color: ColorManager.kError),
+                        ),
+                        errorBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                          borderSide: BorderSide(color: ColorManager.kError),
+                        ),
+                        focusedErrorBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                          borderSide: BorderSide(color: ColorManager.kError),
+                        ),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                          borderSide: BorderSide(color: ColorManager.kError),
+                        ),
+                        fillColor: Colors.grey.shade200,
+                        filled: true,
+                        labelText: 'Email',
+                        labelStyle: TextStyle(color: Colors.grey[500]),
+                        prefixIcon: Icon(
+                          Icons.email_outlined,
+                          color: ColorManager.KPrimaryColor,
+                        ),
                       ),
-      
+                      validator: MultiValidator([
+                        RequiredValidator(errorText: "* Required"),
+                        EmailValidator(errorText: "Enter valid email id"),
+                      ]),
+                    ),
+
                     const SizedBox(height: 10),
-      
-                     TextFormField(
-                        // controller: _passwordController,
-                        decoration: InputDecoration(
-                            enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Colors.grey.shade500),
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                            focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10.0),
-                              borderSide: BorderSide(color: ColorManager.kError),
-                            ),
-                            errorBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10.0),
-                              borderSide: BorderSide(color: ColorManager.kError),
-                            ),
-                            focusedErrorBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10.0),
-                              borderSide: BorderSide(color: ColorManager.kError),
-                            ),
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10.0),
-                              borderSide: BorderSide(color: ColorManager.kError),
-                            ),
-                            fillColor: Colors.grey.shade200,
-                            filled: true,
-                            labelText: 'Phone No',
-                            labelStyle: TextStyle(color: Colors.grey[500]),
-                            prefixIcon: Icon(
-                              Icons.phone_android,
-                              color: ColorManager.KPrimaryColor,
-                            ),
-                            ),
-                        validator: MultiValidator([
-                          RequiredValidator(errorText: "* Required"),
-                          
-                        ]),
+
+                    TextFormField(
+                      // controller: _passwordController,
+                      decoration: InputDecoration(
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.grey.shade500),
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                          borderSide: BorderSide(color: ColorManager.kError),
+                        ),
+                        errorBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                          borderSide: BorderSide(color: ColorManager.kError),
+                        ),
+                        focusedErrorBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                          borderSide: BorderSide(color: ColorManager.kError),
+                        ),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                          borderSide: BorderSide(color: ColorManager.kError),
+                        ),
+                        fillColor: Colors.grey.shade200,
+                        filled: true,
+                        labelText: 'Phone No',
+                        labelStyle: TextStyle(color: Colors.grey[500]),
+                        prefixIcon: Icon(
+                          Icons.phone_android,
+                          color: ColorManager.KPrimaryColor,
+                        ),
                       ),
-      
+                      validator: MultiValidator([
+                        RequiredValidator(errorText: "* Required"),
+                      ]),
+                    ),
+
                     const SizedBox(height: 10),
-      
-                    
-      
+
                     // password textfield
                     TextFormField(
-                        // controller: _passwordController,
-                        obscureText: _isObscure,
-                        decoration: InputDecoration(
-                            enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Colors.grey.shade500),
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                            focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10.0),
-                              borderSide: BorderSide(color: ColorManager.kError),
-                            ),
-                            errorBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10.0),
-                              borderSide: BorderSide(color: ColorManager.kError),
-                            ),
-                            focusedErrorBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10.0),
-                              borderSide: BorderSide(color: ColorManager.kError),
-                            ),
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10.0),
-                              borderSide: BorderSide(color: ColorManager.kError),
-                            ),
-                            fillColor: Colors.grey.shade200,
-                            filled: true,
-                            labelText: 'Password',
-                            labelStyle: TextStyle(color: Colors.grey[500]),
-                            prefixIcon: Icon(
-                              Icons.lock,
+                      // controller: _passwordController,
+                      obscureText: _isObscure,
+                      decoration: InputDecoration(
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.grey.shade500),
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                            borderSide: BorderSide(color: ColorManager.kError),
+                          ),
+                          errorBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                            borderSide: BorderSide(color: ColorManager.kError),
+                          ),
+                          focusedErrorBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                            borderSide: BorderSide(color: ColorManager.kError),
+                          ),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                            borderSide: BorderSide(color: ColorManager.kError),
+                          ),
+                          fillColor: Colors.grey.shade200,
+                          filled: true,
+                          labelText: 'Password',
+                          labelStyle: TextStyle(color: Colors.grey[500]),
+                          prefixIcon: Icon(
+                            Icons.lock,
+                            color: ColorManager.KPrimaryColor,
+                          ),
+                          suffixIcon: IconButton(
+                            icon: Icon(
+                              _isObscure
+                                  ? Icons.visibility
+                                  : Icons.visibility_off,
                               color: ColorManager.KPrimaryColor,
                             ),
-                            suffixIcon: IconButton(
-                              icon: Icon(
-                                _isObscure
-                                    ? Icons.visibility
-                                    : Icons.visibility_off,
-                                color: ColorManager.KPrimaryColor,
-                              ),
-                              onPressed: () {
-                                setState(() {
-                                  _isObscure = !_isObscure;
-                                });
-                              },
-                            )),
-                        validator: MultiValidator([
-                          RequiredValidator(errorText: "* Required"),
-                          MinLengthValidator(6,
-                              errorText: "Password min 6 char required"),
-                          MaxLengthValidator(15,
-                              errorText: "Password should less less than 15 char")
-                        ]),
-                      ),
+                            onPressed: () {
+                              setState(() {
+                                _isObscure = !_isObscure;
+                              });
+                            },
+                          )),
+                      validator: MultiValidator([
+                        RequiredValidator(errorText: "* Required"),
+                        MinLengthValidator(6,
+                            errorText: "Password min 6 char required"),
+                        MaxLengthValidator(15,
+                            errorText:
+                                "Password should less less than 15 char"),
+                        PatternValidator(r'(?=.*?[#?!@$%^&*-])',
+                            errorText:
+                                'passwords must have at least one special character')
+                      ]),
+                    ),
                     const SizedBox(height: 10),
-      
+
                     TextFormField(
-                        // controller: _passwordController,
-                        obscureText: _isObscure,
-                        decoration: InputDecoration(
-                            enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Colors.grey.shade500),
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                            focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10.0),
-                              borderSide: BorderSide(color: ColorManager.kError),
-                            ),
-                            errorBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10.0),
-                              borderSide: BorderSide(color: ColorManager.kError),
-                            ),
-                            focusedErrorBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10.0),
-                              borderSide: BorderSide(color: ColorManager.kError),
-                            ),
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10.0),
-                              borderSide: BorderSide(color: ColorManager.kError),
-                            ),
-                            fillColor: Colors.grey.shade200,
-                            filled: true,
-                            labelText: 'Confirm Password',
-                            labelStyle: TextStyle(color: Colors.grey[500]),
-                            prefixIcon: Icon(
-                              Icons.lock,
+                      // controller: _passwordController,
+                      obscureText: _isObscure,
+                      decoration: InputDecoration(
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.grey.shade500),
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                            borderSide: BorderSide(color: ColorManager.kError),
+                          ),
+                          errorBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                            borderSide: BorderSide(color: ColorManager.kError),
+                          ),
+                          focusedErrorBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                            borderSide: BorderSide(color: ColorManager.kError),
+                          ),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                            borderSide: BorderSide(color: ColorManager.kError),
+                          ),
+                          fillColor: Colors.grey.shade200,
+                          filled: true,
+                          labelText: 'Confirm Password',
+                          labelStyle: TextStyle(color: Colors.grey[500]),
+                          prefixIcon: Icon(
+                            Icons.lock,
+                            color: ColorManager.KPrimaryColor,
+                          ),
+                          suffixIcon: IconButton(
+                            icon: Icon(
+                              _isObscure
+                                  ? Icons.visibility
+                                  : Icons.visibility_off,
                               color: ColorManager.KPrimaryColor,
                             ),
-                            suffixIcon: IconButton(
-                              icon: Icon(
-                                _isObscure
-                                    ? Icons.visibility
-                                    : Icons.visibility_off,
-                                color: ColorManager.KPrimaryColor,
-                              ),
-                              onPressed: () {
-                                setState(() {
-                                  _isObscure = !_isObscure;
-                                });
-                              },
-                            )),
-                        validator: MultiValidator([
-                          RequiredValidator(errorText: "* Required"),
-                          MinLengthValidator(6,
-                              errorText: "Password min 6 char required"),
-                          MaxLengthValidator(15,
-                              errorText: "Password should less less than 15 char")
-                        ]),
-                      ),
-      
+                            onPressed: () {
+                              setState(() {
+                                _isObscure = !_isObscure;
+                              });
+                            },
+                          )),
+                      validator: MultiValidator([
+                        RequiredValidator(errorText: "* Required"),
+                        MinLengthValidator(6,
+                            errorText: "Password min 6 char required"),
+                        MaxLengthValidator(15,
+                            errorText:
+                                "Password should less less than 15 char"),
+                        PatternValidator(r'(?=.*?[#?!@$%^&*-])',
+                            errorText:
+                                'passwords must have at least one special character')
+                      ]),
+                    ),
+
                     const SizedBox(height: 10),
-      
-                    
-      
+
                     // sign in button
                     Container(
                       margin: const EdgeInsets.only(top: 20),
@@ -335,10 +336,9 @@ class _SignUpPageState extends State<SignUpPage> {
                         ),
                       ),
                     ),
-    
-      
+
                     const SizedBox(height: 50),
-      
+
                     // not a member? register now
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -354,7 +354,6 @@ class _SignUpPageState extends State<SignUpPage> {
                           },
                           child: const Text(
                             'Login now',
-                            
                             style: TextStyle(
                               color: Colors.brown,
                               fontWeight: FontWeight.bold,

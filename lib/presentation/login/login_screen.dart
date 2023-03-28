@@ -162,7 +162,8 @@ class _LoginPageState extends State<LoginPage> {
                         MinLengthValidator(6,
                             errorText: "Password min 6 char required"),
                         MaxLengthValidator(15,
-                            errorText: "Password should less less than 15 char")
+                            errorText: "Password should less less than 15 char"),
+                            
                       ]),
                     ),
 

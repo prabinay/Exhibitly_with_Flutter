@@ -49,7 +49,7 @@ class GoogleButton extends StatelessWidget {
       },
       child: Container(
         margin: const EdgeInsets.symmetric(horizontal: 25),
-        padding: const EdgeInsets.all(22),
+        padding: const EdgeInsets.all(15),
         // height: 75,
         // width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(

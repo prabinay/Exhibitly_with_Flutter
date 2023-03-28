@@ -39,6 +39,8 @@ dependencies:
   smooth_page_indicator: ^1.0.1
   simple_animations: ^5.0.0+3
   form_field_validator: ^1.1.0
+  firebase_core: ^2.8.0
+  firebase_auth: ^4.3.0
 
 dev_dependencies:
   flutter_test:
