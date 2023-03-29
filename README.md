@@ -15,5 +15,6 @@ Run the following commands from your terminal:
 
 - firebase_auth: [link](https://pub.dev/packages/firebase_auth)
 - firebase_core: [link](https://pub.dev/packages/firebase_core)
+- smooth_page_indicator: [link](https://pub.dev/packages/smooth_page_indicator)
 
 ## Screenshots
