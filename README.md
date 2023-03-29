@@ -16,5 +16,6 @@ Run the following commands from your terminal:
 - firebase_auth: [link](https://pub.dev/packages/firebase_auth)
 - firebase_core: [link](https://pub.dev/packages/firebase_core)
 - smooth_page_indicator: [link](https://pub.dev/packages/smooth_page_indicator)
+- form_field_validator: [link](https://pub.dev/packages/form_field_validator)
 
 ## Screenshots
