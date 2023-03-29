@@ -2,6 +2,7 @@ import 'package:exhibitly_with_flutter/presentation/features/profile/profile_det
 import 'package:flutter/material.dart';
 
 import '../resources/color_manager.dart';
+import 'home_feed.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -16,7 +17,7 @@ class _MainPageState extends State<MainPage> {
     // FeedUI(),
     // const ProfileDetails(),
     // const AddNewBlog(),
-    const SizedBox(),
+    HomeFeedPage(),
     const SizedBox(),
     const SizedBox(),
     const SizedBox(),

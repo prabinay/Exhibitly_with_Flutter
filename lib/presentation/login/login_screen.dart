@@ -32,6 +32,28 @@ class _LoginPageState extends State<LoginPage> {
 
   void googleSignIn() {}
 
+  // wrong email message popup
+  // void wrongEmailMessage() {
+  //   showDialog(
+  //       context: context,
+  //       builder: (context) {
+  //         return const AlertDialog(
+  //           title: Text('Incorrect Password'),
+  //         );
+  //       });
+  // }
+
+  // wrong email message popup
+  // void wrongPasswordlMessage() {
+  //   showDialog(
+  //       context: context,
+  //       builder: (context) {
+  //         return const AlertDialog(
+  //           title: Text('Incorrect Password'),
+  //         );
+  //       });
+  // }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -207,12 +229,13 @@ class _LoginPageState extends State<LoginPage> {
                                 .then((value) {
                               print("Logged In");
                               Navigator.pushNamed(context, Routes.mainPage);
-                            }).onError((error, stackTrace) {
+                            })
+                            .onError((error, stackTrace) {
                               print("Error ${error.toString()}");
                             });
 
                             if (formKey.currentState!.validate()) {
-                              log('fdjgf');
+                              // log('fdjgf');
                               //here call your function
                               print("not valid calling");
                               setState(() {
