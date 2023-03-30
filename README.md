@@ -20,8 +20,8 @@ Run the following commands from your terminal:
 
 ## Sdk Requirements
 
-compileSdkVersion : It tells Gradle what version of the Android SDK to compile your app with.
-targetSdkVersion : It is the main way Android provides forward compatibility.
+compileSdkVersion : It tells Gradle what version of the Android SDK to compile your app with.<br/>
+targetSdkVersion : It is the main way Android provides forward compatibility.<br/>
 minimumSdkVersion : It is the minimum version of the Android operating system required to run your application.
 
 android {
