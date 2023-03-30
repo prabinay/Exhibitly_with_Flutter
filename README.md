@@ -11,14 +11,14 @@ Run the following commands from your terminal:
 
 2) `flutter pub get` in the project root directory to install all the required dependencies..
 
-##Used Packages
+## Used Packages
 
 - firebase_auth: [link](https://pub.dev/packages/firebase_auth)
 - firebase_core: [link](https://pub.dev/packages/firebase_core)
 - smooth_page_indicator: [link](https://pub.dev/packages/smooth_page_indicator)
 - form_field_validator: [link](https://pub.dev/packages/form_field_validator)
 
-##Sdk Requirements
+## Sdk Requirements
 
 compileSdkVersion : It tells Gradle what version of the Android SDK to compile your app with.
 targetSdkVersion : It is the main way Android provides forward compatibility.
