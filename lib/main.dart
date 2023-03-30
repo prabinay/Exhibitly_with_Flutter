@@ -1,4 +1,4 @@
-import 'package:exhibitly_with_flutter/presentation/home/home_feed.dart';
+ 
 import 'package:exhibitly_with_flutter/presentation/resources/routes_manager.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';

@@ -3,9 +3,10 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import '../resources/routes_manager.dart';
+import '../services/auth_service.dart';
 
 class HomeFeedPage extends StatefulWidget {
-  HomeFeedPage({super.key});
+  const HomeFeedPage({Key? key}): super(key: key);
 
   @override
   State<HomeFeedPage> createState() => _HomeFeedPageState();
@@ -24,16 +25,16 @@ class _HomeFeedPageState extends State<HomeFeedPage> {
     return Scaffold(
       //  floating Action Button using for signout ,
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          signUserOut();
+        onPressed: () async {
+          await AuthService().signOut();
           Navigator.pushNamed(context, Routes.logIn);
         },
-        child: Icon(Icons.logout_rounded),
         backgroundColor: ColorManager.KPrimaryColor,
+        child: const Icon(Icons.logout_rounded),
       ),
 
       body: Center(
-        child: Text("LOGGED IN AS: " + user.email!),
+        child: Text("LOGGED IN AS: ${user.email!}"),
       ),
     );
   }

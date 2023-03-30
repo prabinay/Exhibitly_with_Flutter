@@ -1,17 +1,15 @@
-import 'dart:developer';
-
 import 'package:exhibitly_with_flutter/presentation/login/button.dart';
 import 'package:exhibitly_with_flutter/presentation/resources/color_manager.dart';
+import 'package:exhibitly_with_flutter/presentation/services/auth_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:form_field_validator/form_field_validator.dart';
-import 'package:simple_animations/simple_animations.dart';
 
 import '../resources/routes_manager.dart';
 import '../resources/strings_manager.dart';
 
 class LoginPage extends StatefulWidget {
-  LoginPage({Key? key}) : super(key: key);
+  const LoginPage({Key? key}) : super(key: key);
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -31,6 +29,10 @@ class _LoginPageState extends State<LoginPage> {
   void signUserIn() {}
 
   void googleSignIn() {}
+
+  // signInWithGoogle(){
+  //   FirebaseAuth.instance.signInWithCredential(credential;)
+  // }
 
   // wrong email message popup
   // void wrongEmailMessage() {
@@ -69,7 +71,7 @@ class _LoginPageState extends State<LoginPage> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    const SizedBox(height: 50),
+                    const SizedBox(height: 20),
 
                     // logo
                     const Icon(
@@ -77,7 +79,7 @@ class _LoginPageState extends State<LoginPage> {
                       size: 100,
                     ),
 
-                    const SizedBox(height: 50),
+                    const SizedBox(height: 20),
 
                     // welcome back, you've been missed!
                     Text(
@@ -229,8 +231,7 @@ class _LoginPageState extends State<LoginPage> {
                                 .then((value) {
                               print("Logged In");
                               Navigator.pushNamed(context, Routes.mainPage);
-                            })
-                            .onError((error, stackTrace) {
+                            }).onError((error, stackTrace) {
                               print("Error ${error.toString()}");
                             });
 
@@ -254,7 +255,7 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ),
 
-                    const SizedBox(height: 50),
+                    const SizedBox(height: 25),
 
                     // or continue with
                     Padding(
@@ -285,25 +286,52 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ),
 
-                    const SizedBox(height: 50),
+                    const SizedBox(height: 25),
 
                     // google + apple sign in buttons
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        // google button
-                        GoogleButton(
-                          onTap: googleSignIn,
-                        ),
+                    Center(
+                        child: Container(
+                      margin: EdgeInsets.symmetric(horizontal: 30),
+                      child: ElevatedButton(
+                          onPressed: () async {
+                            await AuthService().signInWithGoogle();
+                            Navigator.pushNamed(context, Routes.mainPage);
+                          },
+                          style: ButtonStyle(
+                            backgroundColor:
+                                MaterialStateProperty.resolveWith((states) {
+                              if (states.contains(MaterialState.pressed)) {
+                                return Colors.black26;
+                              }
+                              return Colors.white;
+                            }),
+                          ),
+                          child: Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: <Widget>[
+                                      Image.asset(
+                                        "assets/images/google.png",
+                                        width: 30,
+                                        height: 30,
+                                      ),
+                                      const SizedBox(
+                                        width: 10,
+                                      ),
+                                      const Text("SignIn with Google",
+                                      style: TextStyle(
+                                        color: Colors.black87,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 18,
+                                      ))
+                                    ])),
+                          )),
+                    )),
 
-                        SizedBox(width: 25),
-
-                        // apple button
-                        // SquareTile(imagePath: 'assets/images/apple.png')
-                      ],
-                    ),
-
-                    const SizedBox(height: 50),
+                    const SizedBox(height: 25),
 
                     // not a member? register now
                     Row(

@@ -111,74 +111,74 @@ class ProfileDetails extends StatelessWidget {
               ],
             ),
           ),
-          Container(
-            height: 210,
-            margin: const EdgeInsets.only(left: 15, right: 15),
-            decoration: BoxDecoration(
-              borderRadius: const BorderRadius.all(Radius.circular(10)),
-              color: ColorManager.KSecondaryColor,
-            ),
-            child: Column(
-              children: <Widget>[
-                SizedBox(
-                    height: 50,
-                    child: Align(
-                        alignment: Alignment.centerLeft,
-                        child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Text(
-                              AppStrings.userName,
-                              style: TextStyle(
-                                color: ColorManager.KTextColor,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 18,
-                              ),
-                            )))),
-                SizedBox(
-                    height: 50,
-                    child: Align(
-                        alignment: Alignment.centerLeft,
-                        child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Text(
-                              AppStrings.userRole,
-                              style: TextStyle(
-                                color: ColorManager.KTextColor,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 18,
-                              ),
-                            )))),
-                SizedBox(
-                    height: 50,
-                    child: Align(
-                        alignment: Alignment.centerLeft,
-                        child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Text(
-                              AppStrings.userComplay,
-                              style: TextStyle(
-                                color: ColorManager.KTextColor,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 18,
-                              ),
-                            )))),
-                SizedBox(
-                    height: 50,
-                    child: Align(
-                        alignment: Alignment.centerLeft,
-                        child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Text(
-                              AppStrings.userLocation,
-                              style: TextStyle(
-                                color: ColorManager.KTextColor,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 18,
-                              ),
-                            )))),
-              ],
-            ),
-          ),
+          // Container(
+          //   height: 210,
+          //   margin: const EdgeInsets.only(left: 15, right: 15),
+          //   decoration: BoxDecoration(
+          //     borderRadius: const BorderRadius.all(Radius.circular(10)),
+          //     color: ColorManager.KSecondaryColor,
+          //   ),
+            // child: Column(
+            //   children: <Widget>[
+            //     SizedBox(
+            //         height: 50,
+            //         child: Align(
+            //             alignment: Alignment.centerLeft,
+            //             child: Padding(
+            //                 padding: const EdgeInsets.all(8.0),
+            //                 child: Text(
+            //                   AppStrings.userName,
+            //                   style: TextStyle(
+            //                     color: ColorManager.KTextColor,
+            //                     fontWeight: FontWeight.bold,
+            //                     fontSize: 18,
+            //                   ),
+            //                 )))),
+            //     SizedBox(
+            //         height: 50,
+            //         child: Align(
+            //             alignment: Alignment.centerLeft,
+            //             child: Padding(
+            //                 padding: const EdgeInsets.all(8.0),
+            //                 child: Text(
+            //                   AppStrings.userRole,
+            //                   style: TextStyle(
+            //                     color: ColorManager.KTextColor,
+            //                     fontWeight: FontWeight.bold,
+            //                     fontSize: 18,
+            //                   ),
+            //                 )))),
+            //     SizedBox(
+            //         height: 50,
+            //         child: Align(
+            //             alignment: Alignment.centerLeft,
+            //             child: Padding(
+            //                 padding: const EdgeInsets.all(8.0),
+            //                 child: Text(
+            //                   AppStrings.userComplay,
+            //                   style: TextStyle(
+            //                     color: ColorManager.KTextColor,
+            //                     fontWeight: FontWeight.bold,
+            //                     fontSize: 18,
+            //                   ),
+            //                 )))),
+            //     SizedBox(
+            //         height: 50,
+            //         child: Align(
+            //             alignment: Alignment.centerLeft,
+            //             child: Padding(
+            //                 padding: const EdgeInsets.all(8.0),
+            //                 child: Text(
+            //                   AppStrings.userLocation,
+            //                   style: TextStyle(
+            //                     color: ColorManager.KTextColor,
+            //                     fontWeight: FontWeight.bold,
+            //                     fontSize: 18,
+            //                   ),
+            //                 )))),
+            //   ],
+            // ),
+          // ),
           Container(
             height: 210,
             margin: const EdgeInsets.only(left: 15, right: 15, top: 15),

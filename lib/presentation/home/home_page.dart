@@ -17,7 +17,7 @@ class _MainPageState extends State<MainPage> {
     // FeedUI(),
     // const ProfileDetails(),
     // const AddNewBlog(),
-    HomeFeedPage(),
+    const HomeFeedPage(),
     const SizedBox(),
     const SizedBox(),
     const SizedBox(),

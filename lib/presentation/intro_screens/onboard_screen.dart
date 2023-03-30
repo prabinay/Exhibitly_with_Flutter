@@ -40,7 +40,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
 
           // Dot indicators
           Container(
-            alignment: Alignment(0, 0.75),
+            alignment: const Alignment(0, 0.75),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -50,7 +50,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                     onTap: () {
                       _controller.jumpToPage(2);
                     },
-                    child: Text('Skip')),
+                    child: const Text('Skip')),
 
                 // dot indicator
                 SmoothPageIndicator(controller: _controller, count: 3),
@@ -61,16 +61,16 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                         onTap: (){
                           Navigator.pushNamed(context, Routes.logIn);
                         },
-                        child: Text('Done'),
+                        child: const Text('Done'),
                     )
                     : GestureDetector(
                         onTap: () {
                           _controller.nextPage(
-                            duration: Duration(milliseconds: 500),
+                            duration: const Duration(milliseconds: 500),
                             curve: Curves.easeIn,
                           );
                         },
-                        child: Text('Next')),
+                        child: const Text('Next')),
               ],
             ),
           ),
