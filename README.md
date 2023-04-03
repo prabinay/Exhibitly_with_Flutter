@@ -27,7 +27,6 @@ minimumSdkVersion : It is the minimum version of the Android operating system re
 
 android {
     compileSdkVersion 33
-
     defaultConfig {
         applicationId "com.example.exhibitly_with_flutter"
         minSdkVersion 22
