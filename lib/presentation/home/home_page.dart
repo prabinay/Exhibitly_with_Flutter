@@ -1,4 +1,6 @@
+import 'package:exhibitly_with_flutter/presentation/features/cart/cart.dart';
 import 'package:exhibitly_with_flutter/presentation/features/profile/profile_details.dart';
+import 'package:exhibitly_with_flutter/presentation/features/search/search.dart';
 import 'package:flutter/material.dart';
 
 import '../resources/color_manager.dart';
@@ -18,8 +20,8 @@ class _MainPageState extends State<MainPage> {
     // const ProfileDetails(),
     // const AddNewBlog(),
     const HomeFeedPage(),
-    const SizedBox(),
-    const SizedBox(),
+    const CartPage(),
+    // const SearchProducts(),
     const SizedBox(),
     const ProfileDetails(),
   ];

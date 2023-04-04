@@ -9,7 +9,7 @@ class ImageAssets{
   static const String facebookIcon = "$iconPath/facebook.svg";
   static const String loginIcon = "$iconPath/login_user.svg";
   static const String likeIcon = "$iconPath/like.png";
-  static const String logoIcon = "$iconPath/logo.png";
+  static const String logoIcon = "$imagePath/logo1.jpg";
 
   static const String profilePic = "$imagePath/deadpool.png";
   static const String  google = "$imagePath/google.png";

@@ -1,8 +1,11 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import '../../resources/assets_manager.dart';
 import '../../resources/color_manager.dart';
+import '../../resources/routes_manager.dart';
 import '../../resources/strings_manager.dart';
+import '../../services/auth_service.dart';
 
 class ProfileDetails extends StatelessWidget {
   const ProfileDetails({Key? key}) : super(key: key);
@@ -84,8 +87,8 @@ class ProfileDetails extends StatelessWidget {
                 CircleAvatar(
                   radius: 70,
                   child: ClipOval(
-                    child: Image.asset(
-                      ImageAssets.profilePic,
+                    child: Image.network(
+                      FirebaseAuth.instance.currentUser!.photoURL!,
                       height: 150,
                       width: 150,
                       fit: BoxFit.cover,
@@ -118,66 +121,66 @@ class ProfileDetails extends StatelessWidget {
           //     borderRadius: const BorderRadius.all(Radius.circular(10)),
           //     color: ColorManager.KSecondaryColor,
           //   ),
-            // child: Column(
-            //   children: <Widget>[
-            //     SizedBox(
-            //         height: 50,
-            //         child: Align(
-            //             alignment: Alignment.centerLeft,
-            //             child: Padding(
-            //                 padding: const EdgeInsets.all(8.0),
-            //                 child: Text(
-            //                   AppStrings.userName,
-            //                   style: TextStyle(
-            //                     color: ColorManager.KTextColor,
-            //                     fontWeight: FontWeight.bold,
-            //                     fontSize: 18,
-            //                   ),
-            //                 )))),
-            //     SizedBox(
-            //         height: 50,
-            //         child: Align(
-            //             alignment: Alignment.centerLeft,
-            //             child: Padding(
-            //                 padding: const EdgeInsets.all(8.0),
-            //                 child: Text(
-            //                   AppStrings.userRole,
-            //                   style: TextStyle(
-            //                     color: ColorManager.KTextColor,
-            //                     fontWeight: FontWeight.bold,
-            //                     fontSize: 18,
-            //                   ),
-            //                 )))),
-            //     SizedBox(
-            //         height: 50,
-            //         child: Align(
-            //             alignment: Alignment.centerLeft,
-            //             child: Padding(
-            //                 padding: const EdgeInsets.all(8.0),
-            //                 child: Text(
-            //                   AppStrings.userComplay,
-            //                   style: TextStyle(
-            //                     color: ColorManager.KTextColor,
-            //                     fontWeight: FontWeight.bold,
-            //                     fontSize: 18,
-            //                   ),
-            //                 )))),
-            //     SizedBox(
-            //         height: 50,
-            //         child: Align(
-            //             alignment: Alignment.centerLeft,
-            //             child: Padding(
-            //                 padding: const EdgeInsets.all(8.0),
-            //                 child: Text(
-            //                   AppStrings.userLocation,
-            //                   style: TextStyle(
-            //                     color: ColorManager.KTextColor,
-            //                     fontWeight: FontWeight.bold,
-            //                     fontSize: 18,
-            //                   ),
-            //                 )))),
-            //   ],
-            // ),
+          // child: Column(
+          //   children: <Widget>[
+          //     SizedBox(
+          //         height: 50,
+          //         child: Align(
+          //             alignment: Alignment.centerLeft,
+          //             child: Padding(
+          //                 padding: const EdgeInsets.all(8.0),
+          //                 child: Text(
+          //                   AppStrings.userName,
+          //                   style: TextStyle(
+          //                     color: ColorManager.KTextColor,
+          //                     fontWeight: FontWeight.bold,
+          //                     fontSize: 18,
+          //                   ),
+          //                 )))),
+          //     SizedBox(
+          //         height: 50,
+          //         child: Align(
+          //             alignment: Alignment.centerLeft,
+          //             child: Padding(
+          //                 padding: const EdgeInsets.all(8.0),
+          //                 child: Text(
+          //                   AppStrings.userRole,
+          //                   style: TextStyle(
+          //                     color: ColorManager.KTextColor,
+          //                     fontWeight: FontWeight.bold,
+          //                     fontSize: 18,
+          //                   ),
+          //                 )))),
+          //     SizedBox(
+          //         height: 50,
+          //         child: Align(
+          //             alignment: Alignment.centerLeft,
+          //             child: Padding(
+          //                 padding: const EdgeInsets.all(8.0),
+          //                 child: Text(
+          //                   AppStrings.userComplay,
+          //                   style: TextStyle(
+          //                     color: ColorManager.KTextColor,
+          //                     fontWeight: FontWeight.bold,
+          //                     fontSize: 18,
+          //                   ),
+          //                 )))),
+          //     SizedBox(
+          //         height: 50,
+          //         child: Align(
+          //             alignment: Alignment.centerLeft,
+          //             child: Padding(
+          //                 padding: const EdgeInsets.all(8.0),
+          //                 child: Text(
+          //                   AppStrings.userLocation,
+          //                   style: TextStyle(
+          //                     color: ColorManager.KTextColor,
+          //                     fontWeight: FontWeight.bold,
+          //                     fontSize: 18,
+          //                   ),
+          //                 )))),
+          //   ],
+          // ),
           // ),
           Container(
             height: 210,
@@ -197,7 +200,10 @@ class ProfileDetails extends StatelessWidget {
                           child: Row(
                             children: [
                               const Icon(
-                                Icons.person,
+                                Icons.info,
+                              ),
+                              const SizedBox(
+                                width: 10,
                               ),
                               Text(
                                 AppStrings.privateInfo,
@@ -219,10 +225,37 @@ class ProfileDetails extends StatelessWidget {
                           child: Row(
                             children: [
                               const Icon(
-                                Icons.email,
+                                Icons.person,
+                              ),
+                              const SizedBox(
+                                width: 10,
                               ),
                               Text(
-                                AppStrings.userEmail,
+                                "${FirebaseAuth.instance.currentUser!.displayName}",
+                                style: TextStyle(
+                                  color: ColorManager.KTextColor,
+                                  fontSize: 15,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ))),
+                SizedBox(
+                    height: 50,
+                    child: Align(
+                        alignment: Alignment.centerLeft,
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 40),
+                          child: Row(
+                            children: [
+                              const Icon(
+                                Icons.email,
+                              ),
+                              const SizedBox(
+                                width: 10,
+                              ),
+                              Text(
+                                "${FirebaseAuth.instance.currentUser!.email}",
                                 style: TextStyle(
                                   color: ColorManager.KTextColor,
                                   fontSize: 15,
@@ -242,8 +275,11 @@ class ProfileDetails extends StatelessWidget {
                               const Icon(
                                 Icons.phone_android,
                               ),
+                              const SizedBox(
+                                width: 10,
+                              ),
                               Text(
-                                AppStrings.userPhone,
+                                "${FirebaseAuth.instance.currentUser!.phoneNumber}",
                                 style: TextStyle(
                                   color: ColorManager.KTextColor,
                                   fontSize: 15,
@@ -252,31 +288,41 @@ class ProfileDetails extends StatelessWidget {
                             ],
                           ),
                         ))),
-                SizedBox(
-                    height: 50,
-                    child: Align(
-                        alignment: Alignment.centerLeft,
-                        child: Padding(
-                          padding: const EdgeInsets.only(left: 40),
-                          child: Row(
-                            children: [
-                              const Icon(
-                                Icons.location_city_outlined,
-                              ),
-                              Text(
-                                AppStrings.userLocation,
-                                style: TextStyle(
-                                  color: ColorManager.KTextColor,
-                                  fontSize: 15,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ))),
+                // SizedBox(
+                //     height: 50,
+                //     child: Align(
+                //         alignment: Alignment.centerLeft,
+                //         child: Padding(
+                //           padding: const EdgeInsets.only(left: 40),
+                //           child: Row(
+                //             children: [
+                //               const Icon(
+                //                 Icons.location_city_outlined,
+                //               ),
+                //               Text(
+                //                 "${FirebaseAuth.instance.currentUser!.}",
+                //                 style: TextStyle(
+                //                   color: ColorManager.KTextColor,
+                //                   fontSize: 15,
+                //                 ),
+                //               ),
+                //             ],
+                //           ),
+                //         ))),
               ],
             ),
           )
         ],
+      ),
+
+      //  floating Action Button using for signout ,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () async {
+          await AuthService().signOut();
+          Navigator.pushNamed(context, Routes.logIn);
+        },
+        backgroundColor: ColorManager.KPrimaryColor,
+        child: const Icon(Icons.logout_rounded),
       ),
     );
   }
