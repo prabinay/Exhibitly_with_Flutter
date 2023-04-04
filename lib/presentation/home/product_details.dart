@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 
 class ProductDetails extends StatefulWidget {
   var _product;
-  ProductDetails(this._product);
+  ProductDetails(this._product, {super.key});
   @override
   _ProductDetailsState createState() => _ProductDetailsState();
 }

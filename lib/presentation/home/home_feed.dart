@@ -6,8 +6,6 @@ import 'package:exhibitly_with_flutter/presentation/resources/color_manager.dart
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
- 
-
 class HomeFeedPage extends StatefulWidget {
   const HomeFeedPage({Key? key}) : super(key: key);
 
@@ -35,7 +33,7 @@ class _HomeFeedPageState extends State<HomeFeedPage> {
         _carouselImages.add(
           qn.docs[i]["img-path"],
         );
-        print(qn.docs[i]["img-path"]);
+        // print(qn.docs[i]["img-path"]);
       }
     });
 
@@ -52,6 +50,7 @@ class _HomeFeedPageState extends State<HomeFeedPage> {
           "product-price": qn.docs[i]["product-price"],
           "product-img": qn.docs[i]["product-img"],
         });
+         
       }
     });
 
@@ -156,11 +155,13 @@ class _HomeFeedPageState extends State<HomeFeedPage> {
                       crossAxisCount: 2, childAspectRatio: 1),
                   itemBuilder: (_, index) {
                     return GestureDetector(
-                      onTap: () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (_) =>
-                                  ProductDetails(_products[index]))),
+                      // onTap: () => Navigator.push(
+                      // context,
+                      // MaterialPageRoute(
+                      // builder: (_) =>
+                      // ProductDetails(_products[index])
+                      // )
+                      // ),
                       child: Card(
                         elevation: 3,
                         child: Column(
@@ -168,9 +169,13 @@ class _HomeFeedPageState extends State<HomeFeedPage> {
                             AspectRatio(
                                 aspectRatio: 2,
                                 child: Container(
-                                    color: Colors.yellow,
-                                    child: Image.network(
-                                      _products[index]["product-img"][0],
+                                    // color: Colors.yellow,
+                                    decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                        image: NetworkImage(
+                                          "${_products[index]["product-img"][0]}",
+                                        ),
+                                      ),
                                     ))),
                             Text("${_products[index]["product-name"]}"),
                             Text(
