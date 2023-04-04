@@ -25,16 +25,15 @@ compileSdkVersion : It tells Gradle what version of the Android SDK to compile y
 targetSdkVersion : It is the main way Android provides forward compatibility.<br/>
 minimumSdkVersion : It is the minimum version of the Android operating system required to run your application.
 
-android {
-    compileSdkVersion 33
-
-    defaultConfig {
-        applicationId "com.example.exhibitly_with_flutter"
-        minSdkVersion 22
-        targetSdkVersion 30
-        versionCode flutterVersionCode.toInteger()
-        versionName flutterVersionName
+    android {
+        compileSdkVersion 33
+        defaultConfig {
+            applicationId "com.example.exhibitly_with_flutter"
+            minSdkVersion 22
+            targetSdkVersion 30
+            versionCode flutterVersionCode.toInteger()
+            versionName flutterVersionName
+        }
     }
-}
 
 ## Screenshots
