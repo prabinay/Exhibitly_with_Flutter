@@ -93,7 +93,7 @@ class _HomeFeedPageState extends State<HomeFeedPage> {
                   enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(0)),
                       borderSide: BorderSide(color: Colors.grey)),
-                  hintText: "Search products here",
+                  hintText: "Search products here...",
                   hintStyle: TextStyle(fontSize: 15),
                   suffixIcon: Icon(Icons.search),
                 ),

@@ -22,7 +22,7 @@ class _MainPageState extends State<MainPage> {
     const HomeFeedPage(),
     const CartPage(),
     // const SearchProducts(),
-    const SizedBox(),
+    // const SizedBox(),
     const ProfileDetails(),
   ];
 
@@ -53,18 +53,18 @@ class _MainPageState extends State<MainPage> {
                 ),
                 label: "",
                 backgroundColor: Colors.yellow),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.search,
-              ),
-              label: "",
-              backgroundColor: Colors.blue,
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.location_on),
-              label: "",
-              backgroundColor: Colors.blue,
-            ),
+            // BottomNavigationBarItem(
+            //   icon: Icon(
+            //     Icons.search,
+            //   ),
+            //   label: "",
+            //   backgroundColor: Colors.blue,
+            // ),
+            // BottomNavigationBarItem(
+            //   icon: Icon(Icons.location_on),
+            //   label: "",
+            //   backgroundColor: Colors.blue,
+            // ),
             BottomNavigationBarItem(
               icon: Icon(
                 Icons.person,
