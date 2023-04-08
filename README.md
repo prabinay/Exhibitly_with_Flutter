@@ -18,6 +18,7 @@ Run the following commands from your terminal:
 - smooth_page_indicator: [link](https://pub.dev/packages/smooth_page_indicator)
 - form_field_validator: [link](https://pub.dev/packages/form_field_validator)
 - cloud_firestore: [link](https://pub.dev/packages/cloud_firestore)
+- get: [link](https://pub.dev/packages/get)
 
 ## Sdk Requirements
 
