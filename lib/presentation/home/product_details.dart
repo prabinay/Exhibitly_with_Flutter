@@ -18,7 +18,7 @@ class _ProductDetailsState extends State<ProductDetails> {
 
   Future addToCart() async {
     final FirebaseAuth _auth = FirebaseAuth.instance;
-    var currentUser = _auth.currentUser;
+    var currentUser = _auth.currentUser();
     CollectionReference _collectionRef =
         FirebaseFirestore.instance.collection("users-cart-items");
     return _collectionRef
@@ -34,7 +34,7 @@ class _ProductDetailsState extends State<ProductDetails> {
 
   Future addToFavourite() async {
     final FirebaseAuth _auth = FirebaseAuth.instance;
-    var currentUser = _auth.currentUser;
+    var currentUser = _auth.currentUser();
     CollectionReference _collectionRef =
     FirebaseFirestore.instance.collection("users-favourite-items");
     return _collectionRef
@@ -68,7 +68,7 @@ class _ProductDetailsState extends State<ProductDetails> {
         ),
         actions: [
           StreamBuilder(
-            stream: FirebaseFirestore.instance.collection("users-favourite-items").doc(FirebaseAuth.instance.currentUser!.email)
+            stream: FirebaseFirestore.instance.collection("users-favourite-items").doc(FirebaseAuth.instance.currentUser()!.email)
                 .collection("items").where("name",isEqualTo: widget._product['product-name']).snapshots(),
             builder: (BuildContext context, AsyncSnapshot snapshot){
               if(snapshot.data==null){

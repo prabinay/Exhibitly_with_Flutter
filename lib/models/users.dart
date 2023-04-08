@@ -1,35 +1,56 @@
-// import 'package:cloud_firestore/cloud_firestore.dart';
-// import 'package:untitled/models/cart_item.dart';
+import 'dart:convert';
 
-// class UserModel {
-//   static const ID = "id";
-//   static const NAME = "name";
-//   static const EMAIL = "email";
-//   static const CART = "cart";
+class MyUser {
+  String? email;
+  String? username;
+  String? password;
+  String? country;
+  String? city;
+  String? phoneNo;
 
-//    String id;
-//    String name;
-//    String email;
-//    List<CartItemModel> cart;
+  String? profilePhoto;
+  String? id;
+  List? skills;
+  String? type;
+  String? color;
 
-//   UserModel({this.id, this.name, this.email, this.cart});
+  MyUser({
+    required this.email,
+    required this.username,
+    required this.password,
+    required this.country,
+    required this.city,
+    required this.phoneNo,
+    required this.profilePhoto,
+    required this.id,
+    required this.skills,
+    required this.type,
+    required this.color,
+  });
 
-//   UserModel.fromSnapshot(DocumentSnapshot snapshot) {
-//     name = snapshot.data()[NAME];
-//     email = snapshot.data()[EMAIL];
-//     id = snapshot.data()[ID];
-//     cart = _convertCartItems(snapshot.data()[CART] ?? []);
-//   }
+  MyUser.fromMap(Map<String, dynamic> map) {
+    city = map["city"];
+    email = map["email"];
+    username = map["username"];
+    id = map["id"];
+    profilePhoto = map["profilePhoto"];
+  }
 
-//   List<CartItemModel> _convertCartItems(List cartFomDb){
-//     List<CartItemModel> _result = [];
-//     if(cartFomDb.length > 0){
-//       cartFomDb.forEach((element) {
-//       _result.add(CartItemModel.fromMap(element));
-//     });
-//     }
-//     return _result;
-//   }
+  Map<String, dynamic> toMap() {
+    return <String, dynamic>{
+      'email': email,
+      'username': username,
+      'password': password,
+      'country': country,
+      'city': city,
+      'phoneNo': phoneNo,
+      'profilePhoto': profilePhoto,
+      'id': id,
+      'skills': skills,
+      'type': type,
+      'color': color,
+    };
+  }
 
-//   List cartItemsToJson() => cart.map((item) => item.toJson()).toList();
-// }
+  String toJson() => json.encode(toMap());
+}

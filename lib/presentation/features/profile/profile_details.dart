@@ -88,7 +88,7 @@ class ProfileDetails extends StatelessWidget {
                   radius: 70,
                   child: ClipOval(
                     child: Image.network(
-                      FirebaseAuth.instance.currentUser!.photoURL!,
+                      FirebaseAuth.instance.currentUser()!.photoURL!,
                       height: 150,
                       width: 150,
                       fit: BoxFit.cover,
@@ -231,7 +231,7 @@ class ProfileDetails extends StatelessWidget {
                                 width: 10,
                               ),
                               Text(
-                                "${FirebaseAuth.instance.currentUser!.displayName}",
+                                "${FirebaseAuth.instance.currentUser()!.displayName}",
                                 style: TextStyle(
                                   color: ColorManager.KTextColor,
                                   fontSize: 15,
@@ -255,7 +255,7 @@ class ProfileDetails extends StatelessWidget {
                                 width: 10,
                               ),
                               Text(
-                                "${FirebaseAuth.instance.currentUser!.email}",
+                                "${FirebaseAuth.instance.currentUser()!.email}",
                                 style: TextStyle(
                                   color: ColorManager.KTextColor,
                                   fontSize: 15,
@@ -279,7 +279,7 @@ class ProfileDetails extends StatelessWidget {
                                 width: 10,
                               ),
                               Text(
-                                "${FirebaseAuth.instance.currentUser!.phoneNumber}",
+                                "${FirebaseAuth.instance.currentUser()!.phoneNumber}",
                                 style: TextStyle(
                                   color: ColorManager.KTextColor,
                                   fontSize: 15,
