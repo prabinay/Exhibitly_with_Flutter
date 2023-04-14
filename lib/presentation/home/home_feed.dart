@@ -6,6 +6,8 @@ import 'package:exhibitly_with_flutter/presentation/resources/color_manager.dart
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
+
+
 class HomeFeedPage extends StatefulWidget {
   const HomeFeedPage({Key? key}) : super(key: key);
 
@@ -147,6 +149,8 @@ class _HomeFeedPageState extends State<HomeFeedPage> {
             const SizedBox(
               height: 15,
             ),
+
+            
             Expanded(
               child: GridView.builder(
                   scrollDirection: Axis.horizontal,
@@ -173,7 +177,7 @@ class _HomeFeedPageState extends State<HomeFeedPage> {
                                     decoration: BoxDecoration(
                                       image: DecorationImage(
                                         image: NetworkImage(
-                                          "${_products[index]["product-img"][0]}",
+                                          "${_products[index]["product-img"]}",
                                         ),
                                       ),
                                     ))),

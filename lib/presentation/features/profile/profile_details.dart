@@ -87,12 +87,12 @@ class ProfileDetails extends StatelessWidget {
                 CircleAvatar(
                   radius: 70,
                   child: ClipOval(
-                    child: Image.network(
-                      FirebaseAuth.instance.currentUser()!.photoURL!,
-                      height: 150,
-                      width: 150,
-                      fit: BoxFit.cover,
-                    ),
+                    // child: Image.network(
+                    //   FirebaseAuth.instance.currentUser()!.photoURL!,
+                    //   height: 150,
+                    //   width: 150,
+                    //   fit: BoxFit.cover,
+                    // ),
                   ),
                 ),
                 Positioned(

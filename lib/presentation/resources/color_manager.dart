@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+Color mains = Color(0xffF35383);
+
 class ColorManager {
   static Color KPrimaryColor = HexColor.fromHex("A04732");
   static Color KSecondaryColor = HexColor.fromHex("EDEBE3");

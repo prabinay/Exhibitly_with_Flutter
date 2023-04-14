@@ -1,6 +1,7 @@
 import 'package:exhibitly_with_flutter/presentation/features/cart/cart.dart';
 import 'package:exhibitly_with_flutter/presentation/features/profile/profile_details.dart';
 import 'package:exhibitly_with_flutter/presentation/features/search/search.dart';
+import 'package:exhibitly_with_flutter/presentation/home/products_home.dart';
 import 'package:flutter/material.dart';
 
 import '../resources/color_manager.dart';
@@ -16,11 +17,9 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   int _selectedIndex = 0;
   final List<Widget> _widgetOptions = <Widget>[
-    // FeedUI(),
-    // const ProfileDetails(),
-    // const AddNewBlog(),
-    const HomeFeedPage(),
-    const CartPage(),
+    // HomeFeedPage(),
+    HomeProducts(),
+    CartPage(),
     // const SearchProducts(),
     // const SizedBox(),
     const ProfileDetails(),
@@ -35,6 +34,7 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // appBar: AppBar(title: Text("Exhibitly")),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
@@ -53,18 +53,6 @@ class _MainPageState extends State<MainPage> {
                 ),
                 label: "",
                 backgroundColor: Colors.yellow),
-            // BottomNavigationBarItem(
-            //   icon: Icon(
-            //     Icons.search,
-            //   ),
-            //   label: "",
-            //   backgroundColor: Colors.blue,
-            // ),
-            // BottomNavigationBarItem(
-            //   icon: Icon(Icons.location_on),
-            //   label: "",
-            //   backgroundColor: Colors.blue,
-            // ),
             BottomNavigationBarItem(
               icon: Icon(
                 Icons.person,
@@ -74,7 +62,7 @@ class _MainPageState extends State<MainPage> {
             ),
           ],
           type: BottomNavigationBarType.fixed,
-          backgroundColor: Colors.white,
+          backgroundColor: ColorManager.KSecondaryColor,
           // selectedItemColor: Colors.orange,
 
           unselectedItemColor: Colors.grey[500],

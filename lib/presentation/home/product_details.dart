@@ -1,6 +1,3 @@
-
-
-
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:exhibitly_with_flutter/presentation/resources/color_manager.dart';
@@ -9,13 +6,12 @@ import 'package:flutter/material.dart';
 
 class ProductDetails extends StatefulWidget {
   var _product;
-  ProductDetails(this._product, {super.key});
+  ProductDetails(this._product, {super.key, required post});
   @override
   _ProductDetailsState createState() => _ProductDetailsState();
 }
 
 class _ProductDetailsState extends State<ProductDetails> {
-
   Future addToCart() async {
     final FirebaseAuth _auth = FirebaseAuth.instance;
     var currentUser = _auth.currentUser();
@@ -36,7 +32,7 @@ class _ProductDetailsState extends State<ProductDetails> {
     final FirebaseAuth _auth = FirebaseAuth.instance;
     var currentUser = _auth.currentUser();
     CollectionReference _collectionRef =
-    FirebaseFirestore.instance.collection("users-favourite-items");
+        FirebaseFirestore.instance.collection("users-favourite-items");
     return _collectionRef
         .doc(currentUser!.email)
         .collection("items")
@@ -68,10 +64,14 @@ class _ProductDetailsState extends State<ProductDetails> {
         ),
         actions: [
           StreamBuilder(
-            stream: FirebaseFirestore.instance.collection("users-favourite-items").doc(FirebaseAuth.instance.currentUser()!.email)
-                .collection("items").where("name",isEqualTo: widget._product['product-name']).snapshots(),
-            builder: (BuildContext context, AsyncSnapshot snapshot){
-              if(snapshot.data==null){
+            stream: FirebaseFirestore.instance
+                .collection("users-favourite-items")
+                .doc(FirebaseAuth.instance.currentUser()!.email)
+                .collection("items")
+                .where("name", isEqualTo: widget._product['product-name'])
+                .snapshots(),
+            builder: (BuildContext context, AsyncSnapshot snapshot) {
+              if (snapshot.data == null) {
                 return Text("");
               }
               return Padding(
@@ -79,19 +79,22 @@ class _ProductDetailsState extends State<ProductDetails> {
                 child: CircleAvatar(
                   backgroundColor: Colors.red,
                   child: IconButton(
-                    onPressed: () => snapshot.data.docs.length==0?addToFavourite():print("Already Added"),
-                    icon: snapshot.data.docs.length==0? Icon(
-                      Icons.favorite_outline,
-                      color: Colors.white,
-                    ):Icon(
-                      Icons.favorite,
-                      color: Colors.white,
-                    ),
+                    onPressed: () => snapshot.data.docs.length == 0
+                        ? addToFavourite()
+                        : print("Already Added"),
+                    icon: snapshot.data.docs.length == 0
+                        ? Icon(
+                            Icons.favorite_outline,
+                            color: Colors.white,
+                          )
+                        : Icon(
+                            Icons.favorite,
+                            color: Colors.white,
+                          ),
                   ),
                 ),
               );
             },
-
           ),
         ],
       ),

@@ -25,16 +25,16 @@ class AuthController extends GetxController {
 
   @override
   void onReady() {
-    // TODO: implement onReady
+  
     super.onReady();
 
-    _user = Rx<User?>(FirebaseAuth.instance.currentUser);
+    _user = Rx<User?>(FirebaseAuth.instance.currentUser());
     _user.bindStream(FirebaseAuth.instance.authStateChanges());
     ever(_user, _setInitialView);
   }
 
   _setInitialView(User? user) {
-    print(user);
+    // print(user);
     if (user == null) {
       Get.offAll(() => LoginPage());
     } else {
@@ -85,53 +85,53 @@ class AuthController extends GetxController {
     };
   }
 
-  void businessSignUp(String jobCategory, String orgName, String phoneNo,
-      String email, String password) async {
-    try {
-      if (email.isNotEmpty &&
-          orgName.isNotEmpty &&
-          password.isNotEmpty &&
-          email.isNotEmpty &&
-          phoneNo.isNotEmpty &&
-          password.isNotEmpty &&
-          jobCategory.isNotEmpty) {
-        try {
-          UserCredential cred = await FirebaseAuth.instance
-              .createUserWithEmailAndPassword(email: email, password: password);
-          cred.user!.updateDisplayName('employer');
-          Business business = Business(
-              email: email,
-              orgName: orgName,
-              password: password,
-              phoneNo: phoneNo,
-              jobCategory: jobCategory,
-              jobDesc: '',
-              profilePhoto:
-                  'https://github.com/Sarthak-777/FInal_Project_flutter_Buness_Networking_System/blob/main/assets/person.jpg?raw=true',
-              uid: cred.user!.uid,
-              type: 'employer');
+  // void businessSignUp(String jobCategory, String orgName, String phoneNo,
+  //     String email, String password) async {
+  //   try {
+  //     if (email.isNotEmpty &&
+  //         orgName.isNotEmpty &&
+  //         password.isNotEmpty &&
+  //         email.isNotEmpty &&
+  //         phoneNo.isNotEmpty &&
+  //         password.isNotEmpty &&
+  //         jobCategory.isNotEmpty) {
+  //       try {
+  //         UserCredential cred = await FirebaseAuth.instance
+  //             .createUserWithEmailAndPassword(email: email, password: password);
+  //         cred.user!.updateDisplayName('employer');
+  //         Business business = Business(
+  //             email: email,
+  //             orgName: orgName,
+  //             password: password,
+  //             phoneNo: phoneNo,
+  //             jobCategory: jobCategory,
+  //             jobDesc: '',
+  //             profilePhoto:
+  //                 'https://github.com/Sarthak-777/FInal_Project_flutter_Buness_Networking_System/blob/main/assets/person.jpg?raw=true',
+  //             uid: cred.user!.uid,
+  //             type: 'employer');
 
-          await FirebaseFirestore.instance
-              .collection('business')
-              .doc(cred.user!.uid)
-              .set(business.toMap());
-          await FirebaseFirestore.instance
-              .collection('email')
-              .doc(email)
-              .set({"email": email});
-          Get.offAll(() => BusinessHomeScreen());
-          // Get.to(VerifyScreen());
-        } on FirebaseAuthException catch (e) {
-          Get.snackbar("Error", e.code);
-        }
-      } else {
-        Get.snackbar("Error", "Please enter all the required data");
-      }
-    } catch (e) {
-      Get.snackbar("Error Creating Account", "Check your credentials");
-      log(e.toString());
-    }
-  }
+  //         await FirebaseFirestore.instance
+  //             .collection('business')
+  //             .doc(cred.user!.uid)
+  //             .set(business.toMap());
+  //         await FirebaseFirestore.instance
+  //             .collection('email')
+  //             .doc(email)
+  //             .set({"email": email});
+  //         Get.offAll(() => BusinessHomeScreen());
+  //         // Get.to(VerifyScreen());
+  //       } on FirebaseAuthException catch (e) {
+  //         Get.snackbar("Error", e.code);
+  //       }
+  //     } else {
+  //       Get.snackbar("Error", "Please enter all the required data");
+  //     }
+  //   } catch (e) {
+  //     Get.snackbar("Error Creating Account", "Check your credentials");
+  //     log(e.toString());
+  //   }
+  // }
 
   void signUp(String email, String username, String password, String country,
       String city, String phoneNo, String work, String jobCategory) async {
@@ -155,12 +155,10 @@ class AuthController extends GetxController {
             country: country,
             city: city,
             phoneNo: phoneNo,
-            working: work,
-            jobCategory: jobCategory,
-            jobDesc: '',
+            
             profilePhoto:
                 'https://github.com/Sarthak-777/FInal_Project_flutter_Buness_Networking_System/blob/main/assets/person.jpg?raw=true',
-            uid: cred.user!.uid,
+            id: cred.user!.uid,
             skills: [],
             type: 'job-seeker',
             color: 'red',
@@ -175,7 +173,7 @@ class AuthController extends GetxController {
               .doc(email)
               .set({"email": email});
 
-          Get.to(VerifyScreen());
+          // Get.to(VerifyScreen());
         } on FirebaseAuthException catch (e) {
           Get.snackbar("Error", e.code);
         }
@@ -226,7 +224,7 @@ class AuthController extends GetxController {
             break;
           } else {
             print('google');
-            Get.to(() => GoogleLogin(), arguments: [userCred]);
+            // Get.to(() => GoogleLogin(), arguments: [userCred]);
           }
         }
       } catch (e) {
