@@ -7,7 +7,6 @@ import 'cart_total.dart';
 
 class CartPage extends StatelessWidget {
   final CartController controller = Get.find();
- 
 
   CartPage({Key? key}) : super(key: key);
 
@@ -27,6 +26,7 @@ class CartPage extends StatelessWidget {
             );
           },
         ),
+        const CartTotal(),
       ),
     );
   }
@@ -49,36 +49,33 @@ class CartProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            CircleAvatar(
-              radius: 40,
-              backgroundImage: NetworkImage(
-                product.img,
-              ),
+      padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          CircleAvatar(
+            radius: 40,
+            backgroundImage: NetworkImage(
+              product.img,
             ),
-            SizedBox(
-              width: 20,
-            ),
-            Expanded(child: Text(product.name)),
-            IconButton(
-                onPressed: () {
-                  controller.removeProducts(product);
-                },
-                icon: Icon(Icons.remove_circle)),
-            Text('$quantity'),
-            IconButton(
-                onPressed: () {
-                  controller.addProducts(product);
-                },
-                icon: Icon(Icons.add_circle)),
-          ],
-          
-        ),
-        
-        );
-        
+          ),
+          SizedBox(
+            width: 20,
+          ),
+          Expanded(child: Text(product.name)),
+          IconButton(
+              onPressed: () {
+                controller.removeProducts(product);
+              },
+              icon: Icon(Icons.remove_circle)),
+          Text('$quantity'),
+          IconButton(
+              onPressed: () {
+                controller.addProducts(product);
+              },
+              icon: Icon(Icons.add_circle)),
+        ],
+      ),
+    );
   }
 }
