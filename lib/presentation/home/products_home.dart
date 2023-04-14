@@ -1,18 +1,27 @@
 import 'package:carousel_slider/carousel_slider.dart';
- 
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 import 'package:exhibitly_with_flutter/controllers/product_controller.dart';
 import 'package:exhibitly_with_flutter/presentation/features/cart/controller/cart_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
- 
 import '../resources/color_manager.dart';
 
-class HomeProducts extends StatelessWidget {
-
-  final productController = Get.put(ProductController());
+class HomeProducts extends StatefulWidget {
+  List _products = [];
+  var _firestoreInstance = FirebaseFirestore.instance;
 
   HomeProducts({Key? key}) : super(key: key);
+
+  @override
+  State<HomeProducts> createState() => _HomeProductsState();
+}
+
+class _HomeProductsState extends State<HomeProducts> {
+
+ 
+  final productController = Get.put(ProductController());
 
   @override
   Widget build(BuildContext context) {
@@ -124,14 +133,14 @@ class HomeProductsCard extends StatelessWidget {
                         productController.products[index].name,
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            fontSize: 17,
+                            fontSize: 15,
                             color: Colors.black.withOpacity(0.8)),
                       ),
                       Row(
                         children: [
                           Text(
                             "Nrs."
-                            '${productController.products[index].price}',
+                            '${productController.products[index].price.toString()}',
                             style: TextStyle(
                               fontSize: 12,
                               fontWeight: FontWeight.bold,
@@ -152,8 +161,8 @@ class HomeProductsCard extends StatelessWidget {
                           IconButton(
                             padding: EdgeInsets.only(left: 40),
                             onPressed: () {
-                              cartController
-                                  .addProducts(productController.products[index]);
+                              cartController.addProducts(
+                                  productController.products[index]);
                             },
                             icon: Icon(
                               Icons.add_circle,
