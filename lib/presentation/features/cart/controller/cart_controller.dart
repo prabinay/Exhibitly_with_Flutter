@@ -16,8 +16,8 @@ class CartController extends GetxController {
     Get.snackbar(
       "Product Added",
       "You have added the ${product.name} to the cart",
-      snackPosition: SnackPosition.BOTTOM,
-      duration: Duration(seconds: 2),
+      snackPosition: SnackPosition.TOP,
+      duration: Duration(seconds: 1),
     );
   }
 
@@ -30,8 +30,8 @@ class CartController extends GetxController {
     Get.snackbar(
       "Product Removed",
       "You have removed the ${product.name} from the cart",
-      snackPosition: SnackPosition.BOTTOM,
-      duration: Duration(seconds: 2),
+      snackPosition: SnackPosition.TOP,
+      duration: Duration(seconds: 1),
     );
   }
 

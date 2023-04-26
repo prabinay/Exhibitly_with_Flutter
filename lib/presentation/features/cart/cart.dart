@@ -26,7 +26,7 @@ class CartPage extends StatelessWidget {
             );
           },
         ),
-        const CartTotal(),
+        
       ),
     );
   }
