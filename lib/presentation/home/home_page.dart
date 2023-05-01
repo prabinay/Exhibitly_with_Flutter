@@ -5,6 +5,7 @@ import 'package:exhibitly_with_flutter/presentation/home/products_home.dart';
 import 'package:flutter/material.dart';
 
 import '../resources/color_manager.dart';
+import '../widgets/custom_text.dart';
 import 'home_feed.dart';
 
 class MainPage extends StatefulWidget {
@@ -34,7 +35,19 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(title: Text("Exhibitly")),
+      // appBar: AppBar(
+      //   // backgroundColor: Colors.white,
+      //   iconTheme: IconThemeData(color: Colors.black),
+      //   title: Text(
+      //     "Exhibitly",
+      //     style: TextStyle(
+      //         fontSize: 16, color: Colors.black, fontWeight: FontWeight.normal),
+      //   ),
+      //   elevation: 0,
+      //   centerTitle: true,
+      //   backgroundColor: ColorManager.KPrimaryColor,
+      //   automaticallyImplyLeading: false,
+      // ),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),

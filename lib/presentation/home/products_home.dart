@@ -19,8 +19,6 @@ class HomeProducts extends StatefulWidget {
 }
 
 class _HomeProductsState extends State<HomeProducts> {
-
- 
   final productController = Get.put(ProductController());
 
   @override
@@ -36,6 +34,23 @@ class _HomeProductsState extends State<HomeProducts> {
 
     return Obx(
       () => Scaffold(
+          appBar: AppBar(
+            // backgroundColor: Colors.white,
+
+            iconTheme: IconThemeData(color: Colors.black),
+            title: Text(
+              "Exhibitly",
+              style: TextStyle(
+                  fontSize: 16,
+                  color: Colors.black,
+                  fontWeight: FontWeight.normal),
+            ),
+            elevation: 0,
+            centerTitle: true,
+            backgroundColor: ColorManager.KPrimaryColor,
+            automaticallyImplyLeading: false,
+          ),
+
           // padding: EdgeInsets.only(top: 10),
           body: GridView.builder(
               padding:

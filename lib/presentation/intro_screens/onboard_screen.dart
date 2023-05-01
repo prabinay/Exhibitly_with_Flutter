@@ -61,7 +61,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                         onTap: (){
                           Navigator.pushNamed(context, Routes.logIn);
                         },
-                        child: const Text('Done'),
+                        child: const Text('Get Started'),
                     )
                     : GestureDetector(
                         onTap: () {

@@ -14,6 +14,7 @@ class CartPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Obx(
       () => SizedBox(
+        
         height: 600,
         child: ListView.builder(
           itemCount: controller.products.length,
