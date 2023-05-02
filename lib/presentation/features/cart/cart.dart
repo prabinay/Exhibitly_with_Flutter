@@ -13,21 +13,23 @@ class CartPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Obx(
-      () => SizedBox(
-        
-        height: 600,
-        child: ListView.builder(
-          itemCount: controller.products.length,
-          itemBuilder: (BuildContext context, int index) {
-            return CartProductCard(
-              controller: controller,
-              product: controller.products.keys.toList()[index],
-              quantity: controller.products.values.toList()[index],
-              index: index,
-            );
-          },
+      () => SingleChildScrollView(
+        child: SizedBox(
+          
+          height: 500,
+          child: ListView.builder(
+            itemCount: controller.products.length,
+            itemBuilder: (BuildContext context, int index) {
+              return CartProductCard(
+                controller: controller,
+                product: controller.products.keys.toList()[index],
+                quantity: controller.products.values.toList()[index],
+                index: index,
+              );
+            },
+          ),
+          
         ),
-        
       ),
     );
   }
@@ -36,7 +38,7 @@ class CartPage extends StatelessWidget {
 class CartProductCard extends StatelessWidget {
   final CartController controller;
   final Product product;
-  final int quantity;
+  final dynamic quantity;
   final int index;
 
   const CartProductCard(

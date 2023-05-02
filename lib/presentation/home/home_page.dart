@@ -1,4 +1,5 @@
 import 'package:exhibitly_with_flutter/presentation/features/cart/cart.dart';
+import 'package:exhibitly_with_flutter/presentation/features/cart/cart_screen.dart';
 import 'package:exhibitly_with_flutter/presentation/features/profile/profile_details.dart';
 import 'package:exhibitly_with_flutter/presentation/features/search/search.dart';
 import 'package:exhibitly_with_flutter/presentation/home/products_home.dart';
@@ -20,7 +21,7 @@ class _MainPageState extends State<MainPage> {
   final List<Widget> _widgetOptions = <Widget>[
     // HomeFeedPage(),
     HomeProducts(),
-    CartPage(),
+    CartScreen(),
     // const SearchProducts(),
     // const SizedBox(),
     const ProfileDetails(),

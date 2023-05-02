@@ -40,11 +40,13 @@ class CartController extends GetxController {
 
   // get producst Subtotal
   get productSubtotal => _products.entries
-      .map((product) => product.key.price * product.value).toList();
+      .map((product) => product.key.price * product.value)
+      .toList();
 
   // get Total
-    get total => _products.entries
-      .map((product) => product.key.price * product.value).toList()
-      .reduce((value, element) => value + element).toStringAsFixed(2);
-
+  get total => _products.entries
+      .map((product) => product.key.price * product.value)
+      .toList()
+      .reduce((value, element) => value + element)
+      .toStringAsFixed(3);
 }
